@@ -36,7 +36,8 @@ export default function WineList() {
 
   return (
     <div>
-     <h1>WineList</h1>
+     <h1>MalbecWineList</h1>
+     
     <table>
     <tbody>
     <tr>
