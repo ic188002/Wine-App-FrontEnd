@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function WineDetails() {
+export default function WineDetails(props) {
   return (
-    <div className="wine-details">
-        <h1 className="section-title">Details</h1>
+    <div >
+          <h5>{props.title}</h5>
+    <h5>{props.description}</h5>
+        <h5>{props.price}</h5>
     </div>
   )
 }
