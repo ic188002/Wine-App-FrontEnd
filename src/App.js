@@ -94,7 +94,6 @@ export default function App() {
 
 
 
-
   return (
     <div>
       <Router>
@@ -123,9 +122,7 @@ export default function App() {
               <Route path="/" element={<WineList />}></Route>
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
-
               <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
-
             </Routes>
           </div>
         </div>
