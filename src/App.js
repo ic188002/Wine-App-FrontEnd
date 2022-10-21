@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import Axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Alert } from "react-bootstrap"
+import WineList from './wine/WineList'
 //ROUTING
 
 
@@ -67,26 +68,26 @@ export default function App() {
     setIsAuth(false)
     setUser(null)
     setMessage("User Logged out Successfully")
-    
+
   }
 
 
 
-const errMessage = message ? (
-  
-  <Alert variant='success' onClose={()=>setMessage(null)} dismissible >{message}</Alert>
-) : null
+  const errMessage = message ? (
+
+    <Alert variant='success' onClose={() => setMessage(null)} dismissible >{message}</Alert>
+  ) : null
 
 
 
   Axios.get('https://api.spoonacular.com/food/wine/pairing?food=&apiKey=7a64dea7d5bb41f38bb3b24933947711')
-  .then( response => {
-    console.log(response.data)
-    
+    .then(response => {
+      console.log(response.data)
+
     })
-  .catch(error => {
-    console.log(error)
-  })
+    .catch(error => {
+      console.log(error)
+    })
 
 
 
@@ -95,36 +96,39 @@ const errMessage = message ? (
 
   return (
     <div>
-    <Router>
-      <div>
-        {errMessage} 
-        <nav>
-          {isAuth ? (
-            <div>
-              {user ? "Welcome " +  user.user.name : null}&nbsp;
-              <Link to='/'>Home</Link>&nbsp;
-              <Link to='/logout' onClick={onLogoutHandler}>Logout</Link>&nbsp;
-            </div>
-          ) : (
-            <div>
-              <Link to='/signup'>Signup</Link>&nbsp;
-              <Link to='/signin'>Signin</Link>&nbsp;
-              <Link to='/'>Home</Link>&nbsp;
-      
-
-            </div>
-          )}
-        </nav>
+      <Router>
         <div>
-          <Routes>
-            <Route path="/" element={<Signin login={loginHandler} />}></Route>
-            <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
-            <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
-          </Routes>
+          {errMessage}
+          <nav>
+            {isAuth ? (
+              <div>
+                {user ? "Welcome " + user.user.name : null}&nbsp;
+                <Link to='/'>Home</Link>&nbsp;
+                <Link to='/logout' onClick={onLogoutHandler}>Logout</Link>&nbsp;
+              </div>
+            ) : (
+              <div>
+                <Link to='/signup'>Signup</Link>&nbsp;
+                <Link to='/signin'>Signin</Link>&nbsp;
+                <Link to='/'>Home</Link>&nbsp;
+
+
+              </div>
+            )}
+          </nav>
+          <div>
+            <Routes>
+              <Route path="/" element={<Signin login={loginHandler} />}></Route>
+              <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
+              <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
-    <WineIndex></WineIndex>
+        <WineList></WineList>
+      </Router>
     </div>
     
-  )}
+  )
+}
+
+
