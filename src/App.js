@@ -11,6 +11,14 @@ import WineList from './wine/WineList'
 
 import MalbecWineList from './wine/MalbecWineList'
 
+
+
+import BordeauxWineList from './wine/BordeauxWineList'
+import PinotGWineList from './wine/PinotGWineList'
+import PrimitivoWineList from './wine/PrimitivoWineList'
+import SauvignonWineList from './wine/SauvignonWineList'
+import CheninBlancWineList from './wine/CheninBlancWineList'
+
 import ChardonnayWineList from './wine/ChardonnayWineList'
 import RieslingWineList from './wine/RieslingWineList'
 import CabernetSauvignonWineList from './wine/CabernetSauvignonWineList'
@@ -139,6 +147,13 @@ export default function App() {
               <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
              
               <Route path="/chardonnaywinelist" element={<ChardonnayWineList></ChardonnayWineList>}></Route>
+
+              <Route path="/bordeauxwinelist" element={<BordeauxWineList></BordeauxWineList>}></Route>
+              <Route path="/pinotgrigiowinelist" element={<PinotGWineList></PinotGWineList>}></Route>
+              <Route path="/primitivowinelist" element={<PrimitivoWineList></PrimitivoWineList>}></Route>
+              <Route path="/sauvignonwinelist" element={<SauvignonWineList></SauvignonWineList>}></Route>
+              <Route path="/cheninblancwinelist" element={<CheninBlancWineList></CheninBlancWineList>}></Route>
+
               <Route path="/rieslingwinelist" element={<RieslingWineList></RieslingWineList>}></Route>
               <Route path="/cabernetsauvignonwinelist" element={<CabernetSauvignonWineList></CabernetSauvignonWineList>}></Route>
               <Route path="/moscatowinelist" element={<MoscatoWineList></MoscatoWineList>}></Route>
@@ -149,6 +164,7 @@ export default function App() {
               <Route path="/shirazwinelist" element={<ShirazWineList />}></Route>
               <Route path="/cotesdurhonewinelist" element={<CotesdurhoneWineList />}></Route>
               <Route path="/riojawinelist" element={<RiojaWineList />}></Route>
+
 
 
 
