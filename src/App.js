@@ -7,6 +7,7 @@ import Axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Alert } from "react-bootstrap"
 import WineList from './wine/WineList'
+import MalbecWineList from './wine/MalbecWineList'
 //ROUTING
 
 
@@ -111,24 +112,28 @@ export default function App() {
                 <Link to='/signup'>Signup</Link>&nbsp;
                 <Link to='/signin'>Signin</Link>&nbsp;
                 <Link to='/'>Home</Link>&nbsp;
-
+                {/* <Link to='/malbecwines'>Malbec Wines</Link> */}
 
               </div>
             )}
           </nav>
           <div>
             <Routes>
-              <Route path="/" element={<Signin login={loginHandler} />}></Route>
+              {/* This code to go in route path / -- <Signin login={loginHandler} /> */}
+              <Route path="/" element={<WineList />}></Route>
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
+
+              <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
 
             </Routes>
           </div>
         </div>
-        <WineList></WineList>
+
       </Router>
     </div>
-)}
+  )
+}
 
 
 
