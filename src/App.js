@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import Axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Alert } from "react-bootstrap"
+import WineList from './wine/WineList'
 //ROUTING
 
 
@@ -14,7 +15,7 @@ export default function App() {
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
   const [message, setMessage] = useState(null);
-  let timer;
+
   //this will be exicuted 
   useEffect(() => {
     let token = localStorage.getItem("token")
@@ -84,6 +85,7 @@ const errMessage = message ? (
 ) : null
 
   return (
+    <div>
     <Router>
       <div>
         {errMessage} 
@@ -113,5 +115,10 @@ const errMessage = message ? (
           </Routes>
         </div>
       </div>
+      <WineList></WineList>
     </Router>
-  )}
+
+  </div>
+  )
+}
+
