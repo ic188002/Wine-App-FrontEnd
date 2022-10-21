@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
-import { Container, Card, Button, CardGroup, Row, Col } from 'react-bootstrap';
+import WineDetails from './WineDetails'
+
 
 export default function WineList() {
   return (
 
     <div>
       <h1>WineList</h1>
-
       <p><Link to="/chardonnaywinelist">Chardonnay Wines</Link></p>
       <p><Link to="/rieslingwinelist">Riesling Wines</Link></p>
       <p><Link to="/moscatowinelist">Moscato Wines</Link></p>
@@ -45,7 +45,6 @@ export default function WineList() {
         <h2>Cabernet Sauvignon Wines</h2>
       </div>
     </div>
-
     <div className='Row'>
       <div className='Box'>
       <img className='Bottle' src="/images/white.png"/>
@@ -64,7 +63,6 @@ export default function WineList() {
         <h2>Port Wines</h2>
       </div>
     </div>
-
     <div className='Row'>
       <div className='Box'>
         <img className='Bottle' src="/images/red.png"/>

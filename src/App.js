@@ -30,6 +30,7 @@ import PortWineList from './wine/PortWineList'
 import ShirazWineList from './wine/ShirazWineList'
 import CotesdurhoneWineList from './wine/CotesdurhoneWineList'
 import RiojaWineList from './wine/RiojaWineList'
+import WineDetails from './wine/WineDetails'
 
 //ROUTING
 
@@ -141,7 +142,7 @@ export default function App() {
           <div>
             <Routes>
               {/* This code to go in route path / -- <Signin login={loginHandler} /> */}
-              <Route path="/" element={<WineList />}></Route>
+              {/* <Route path="/" element={<WineList />}></Route> */}
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
               <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
@@ -171,12 +172,13 @@ export default function App() {
 
 
             </Routes>
+            
           </div>
+          <WineDetails />
+          <WineList />
+
         </div>
       </Router>
     </div>
   )
 }
-
-
-

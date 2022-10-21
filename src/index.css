@@ -14,6 +14,7 @@ code {
   padding: 20px;
   text-align: center;
 }
+
 .Row {
   color: rgb(179, 41, 41);
   display: flex;
@@ -39,4 +40,45 @@ code {
 .Bottle {
   position: relative;
   height: 80%;
+
+}
+.wine-list {
+position: relative;
+  flex: 1 0 33.333333%;
+  height: 100%;
+  padding: 3.6em 0 0;
+  overflow-y: scroll;
+  background-color: #f0f0f0;
+}
+
+.wine-row{
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 3fr;
+
+  margin-bottom: 0.2rem;
+  font-size: 0.5em;
+  background-color: white;
+}
+
+.wine-summary {
+  padding: 0.5em 1.5em;
+  background-color: white;
+}
+
+.section-count {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 0.25em 0.25em 0.25em 0.5em;
+  border-radius: 20%;
+  margin-left: 0.5em;
+  font-weight: bold;
+}
+
+.wine-details {
+  position: relative;
+  overflow-y: scroll;
+
 }
