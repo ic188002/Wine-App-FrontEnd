@@ -9,6 +9,11 @@ import { Alert } from "react-bootstrap"
 import WineList from './wine/WineList'
 import MalbecWineList from './wine/MalbecWineList'
 import ChardonnayWineList from './wine/ChardonnayWineList'
+import BordeauxWineList from './wine/BordeauxWineList'
+import PinotGWineList from './wine/PinotGWineList'
+import PrimitivoWineList from './wine/PrimitivoWineList'
+import SauvignonWineList from './wine/SauvignonWineList'
+import CheninBlancWineList from './wine/CheninBlancWineList'
 //ROUTING
 
 
@@ -125,6 +130,11 @@ export default function App() {
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
               <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
               <Route path="/chardonnaywinelist" element={<ChardonnayWineList></ChardonnayWineList>}></Route>
+              <Route path="/bordeauxwinelist" element={<BordeauxWineList></BordeauxWineList>}></Route>
+              <Route path="/pinotgrigiowinelist" element={<PinotGWineList></PinotGWineList>}></Route>
+              <Route path="/primitivowinelist" element={<PrimitivoWineList></PrimitivoWineList>}></Route>
+              <Route path="/sauvignonwinelist" element={<SauvignonWineList></SauvignonWineList>}></Route>
+              <Route path="/cheninblancwinelist" element={<CheninBlancWineList></CheninBlancWineList>}></Route>
             </Routes>
           </div>
         </div>
