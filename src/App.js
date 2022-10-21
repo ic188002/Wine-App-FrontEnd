@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Signup from './user/Signup'
 import Signin from './user/Signin'
-
+import WineIndex from './wines/WineIndex'
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import Axios from 'axios'
 import jwt_decode from 'jwt-decode'
@@ -14,7 +14,7 @@ export default function App() {
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
   const [message, setMessage] = useState(null);
-  let timer;
+
   //this will be exicuted 
   useEffect(() => {
     let token = localStorage.getItem("token")
@@ -30,10 +30,7 @@ export default function App() {
 
       }
     }
-
   }, [])
-
-
 
   const registerHandler = (user) => {
     Axios.post("auth/signup", user)
@@ -44,7 +41,6 @@ export default function App() {
         console.log(error)
       });
   }
-
 
   const loginHandler = (cred) => {
     Axios.post("auth/signin", cred)
@@ -76,14 +72,29 @@ export default function App() {
 
 
 
-  
-
 const errMessage = message ? (
   
   <Alert variant='success' onClose={()=>setMessage(null)} dismissible >{message}</Alert>
 ) : null
 
+
+
+  Axios.get('https://api.spoonacular.com/food/wine/pairing?food=&apiKey=7a64dea7d5bb41f38bb3b24933947711')
+  .then( response => {
+    console.log(response.data)
+    
+    })
+  .catch(error => {
+    console.log(error)
+  })
+
+
+
+
+
+
   return (
+    <div>
     <Router>
       <div>
         {errMessage} 
@@ -109,9 +120,11 @@ const errMessage = message ? (
             <Route path="/" element={<Signin login={loginHandler} />}></Route>
             <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
             <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
-
           </Routes>
         </div>
       </div>
     </Router>
+    <WineIndex></WineIndex>
+    </div>
+    
   )}
