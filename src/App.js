@@ -8,6 +8,7 @@ import jwt_decode from 'jwt-decode'
 import { Alert } from "react-bootstrap"
 import WineList from './wine/WineList'
 import MalbecWineList from './wine/MalbecWineList'
+import ChardonnayWineList from './wine/ChardonnayWineList'
 //ROUTING
 
 
@@ -123,10 +124,10 @@ export default function App() {
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
               <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
+              <Route path="/chardonnaywinelist" element={<ChardonnayWineList></ChardonnayWineList>}></Route>
             </Routes>
           </div>
         </div>
-
       </Router>
     </div>
   )

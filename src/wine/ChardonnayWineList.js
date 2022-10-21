@@ -2,7 +2,7 @@ import React, { useEffect, useState }  from 'react'
 import Axios from 'axios'
 import WineDetails from './WineDetails'
 
-export default function MalbecWineList() {
+export default function ChardonnayWineList () {
 
 
     const [wineList, setWineList] = useState([]);
@@ -14,7 +14,7 @@ export default function MalbecWineList() {
         }, [])
 
     const loadWineList = () => {
-        Axios.get('https://api.spoonacular.com/food/wine/recommendation?wine=malbec&number=1&apiKey=7a64dea7d5bb41f38bb3b24933947711') 
+        Axios.get('https://api.spoonacular.com/food/wine/recommendation?wine=chardonnay&number=1&apiKey=7a64dea7d5bb41f38bb3b24933947711') 
     
         .then(response => {
             console.log(response.data)
@@ -36,7 +36,7 @@ export default function MalbecWineList() {
 
   return (
     <div>
-     <h1>MalbecWineList</h1>
+     <h1>Chardonnay WineList</h1>
      
     <table>
     <tbody>
