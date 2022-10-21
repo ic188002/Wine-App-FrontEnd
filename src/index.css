@@ -12,3 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.wineList{
+  background-color: rgb(255, 179, 179);
+  padding: 20px;
+  text-align: center;
+}
