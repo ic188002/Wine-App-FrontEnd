@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState }  from 'react'
 import Axios from 'axios'
-import WineDetails from './WineDetails'
+import WineRow from './WineRow'
+import WineDetails from './WineDetails';
 
 export default function BordeauxWineList() {
 
@@ -14,7 +15,7 @@ export default function BordeauxWineList() {
         }, [])
 
     const loadWineList = () => {
-        Axios.get('https://api.spoonacular.com/food/wine/recommendation?wine=bordeaux&number=1&apiKey=7a64dea7d5bb41f38bb3b24933947711') 
+        Axios.get('https://api.spoonacular.com/food/wine/recommendation?wine=bordeaux&number=10&apiKey=cf8ded1fa117496c820dea2d4b16fbdf') 
     
         .then(response => {
             console.log(response.data)
@@ -28,27 +29,28 @@ export default function BordeauxWineList() {
     }
 
     const allWine= wineList.map((wine, index) => (
-        <tr key={index}>
-            <WineDetails {...wine}></WineDetails>
+        <div key={index}>
+            <WineRow {...wine}></WineRow>
             
-        </tr>
+        </div>
     ))
 
   return (
-    <div>
-     <h1>BordeauxWineList</h1>
-     
-    <table>
+    <div className="wine-list">
+     <h1 className="section-wine-title">BordeauxWineList</h1>
+     <span className="section-count">Number of Wines: {allWine.length}</span>
+     {allWine}
+
+    {/* <table>
     <tbody>
     <tr>
         <th>Wine Name</th>
         <th>Wine Description</th>
         <th>Price</th>
     </tr>
-    {allWine}
-    </tbody>
+    </tbody> */}
    
-</table>
+{/* </table> */}
 </div>
   )
 }

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState }  from 'react'
 import Axios from 'axios'
-import WineDetails from './WineDetails'
+import WineRow from './WineRow'
 
 export default function SauvignonWineList() {
 
@@ -29,7 +29,7 @@ export default function SauvignonWineList() {
 
     const allWine= wineList.map((wine, index) => (
         <tr key={index}>
-            <WineDetails {...wine}></WineDetails>
+            <WineRow {...wine}></WineRow>
             
         </tr>
     ))

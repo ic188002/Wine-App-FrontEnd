@@ -30,6 +30,7 @@ import PortWineList from './wine/PortWineList'
 import ShirazWineList from './wine/ShirazWineList'
 import CotesdurhoneWineList from './wine/CotesdurhoneWineList'
 import RiojaWineList from './wine/RiojaWineList'
+import WineDetails from './wine/WineDetails'
 
 //ROUTING
 
@@ -171,12 +172,11 @@ export default function App() {
 
 
             </Routes>
+            
           </div>
         </div>
       </Router>
+
     </div>
   )
 }
-
-
-
