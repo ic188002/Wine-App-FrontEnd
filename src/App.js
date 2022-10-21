@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Signup from './user/Signup'
 import Signin from './user/Signin'
+
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import Axios from 'axios'
 import jwt_decode from 'jwt-decode'
@@ -10,6 +11,7 @@ import WineList from './wine/WineList'
 
 
 export default function App() {
+
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
   const [message, setMessage] = useState(null);
@@ -99,6 +101,7 @@ const errMessage = message ? (
               <Link to='/signup'>Signup</Link>&nbsp;
               <Link to='/signin'>Signin</Link>&nbsp;
               <Link to='/'>Home</Link>&nbsp;
+      
 
             </div>
           )}
@@ -108,11 +111,14 @@ const errMessage = message ? (
             <Route path="/" element={<Signin login={loginHandler} />}></Route>
             <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
             <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
+
           </Routes>
         </div>
       </div>
       <WineList></WineList>
     </Router>
+
   </div>
   )
 }
+
