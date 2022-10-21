@@ -28,11 +28,11 @@ export default function WineList() {
 
 
     <div className='Row'>
-      <div className='Box'>
+      <div className='Box1'>
       <img className='Bottle' src="/images/white.png"/>
         <h2>Chardonnay Wines</h2>
       </div>
-      <div className='Box'>
+      <div className='Box1'>
       <img className='Bottle' src="/images/white.png"/>
         <h2>Riesling Wines</h2>
       </div>
@@ -40,23 +40,23 @@ export default function WineList() {
       <img className='Bottle' src="/images/red.png"/>
         <h2 className='info'>Moscato Wines</h2>
       </div>
-      <div className='Box'>
+      <div className='Box1'>
       <img className='Bottle' src="/images/white.png"/>
         <h2>Cabernet Sauvignon Wines</h2>
       </div>
     </div>
     <div className='Row'>
-      <div className='Box'>
-      <img className='Bottle' src="/images/white.png"/>
+      <div className='Box3'>
+      <img className='Bottle' src="/images/rose.png"/>
         <h2>Rose Wines</h2>
       </div>
       <div className='Box'>
       <img className='Bottle' src="/images/red.png"/>
         <h2>Malbec Wines</h2>
       </div>
-      <div className='Box'>
-      <img className='Bottle' src="/images/white.png"/>
-        <h2>Chardonnay Wines</h2>
+      <div className='Box1'>
+      <img className='Bottle' src="/images/champ.png"/>
+        <h2>Champagne</h2>
       </div>
       <div className='Box'>
       <img className='Bottle' src="/images/red.png"/>
@@ -72,7 +72,7 @@ export default function WineList() {
       <img className='Bottle' src="/images/red.png"/>
         <h2>Rioja Wines</h2>
       </div>
-      <div className='Box'>
+      <div className='Box1'>
       <img className='Bottle' src="/images/white.png"/>
         <h2>Cotes Du Rhone Wines</h2>
       </div>
@@ -82,19 +82,19 @@ export default function WineList() {
       </div>
     </div>
     <div className='Row'>
-      <div className='Box'>
+      <div className='Box1'>
       <img className='Bottle' src="/images/white.png"/>
         <h2>Pinot Grigio Wines</h2>
       </div>
-      <div className='Box'>
+      <div className='Box1'>
       <img className='Bottle' src="/images/white.png"/>
         <h2>Primitivo Wines</h2>
       </div>
-      <div className='Box'>
+      <div className='Box1'>
       <img className='Bottle' src="/images/white.png"/>
         <h2>Sauvignon Blanc Wines</h2>
       </div>
-      <div className='Box'>
+      <div className='Box1'>
       <img className='Bottle' src="/images/white.png"/>
         <h2>Chenin Blanc Wines</h2>
       </div>
