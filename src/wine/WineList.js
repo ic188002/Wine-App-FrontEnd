@@ -1,13 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
-
+import WineDetails from './WineDetails'
 
 export default function WineList() {
   return (
 
     <div>
       <h1>WineList</h1>
-
       <p><Link to="/chardonnaywinelist">Chardonnay Wines</Link></p>
       <p><Link to="/rieslingwinelist">Riesling Wines</Link></p>
       <p><Link to="/moscatowinelist">Moscato Wines</Link></p>
@@ -25,7 +24,7 @@ export default function WineList() {
         <p><Link to="/sauvignonwinelist">Sauvignon Blanc Wines</Link></p>
         <p><Link to="/cheninblancwinelist"> Chenin Blanc Wines</Link></p>
 
-
+        {/* <div> <WineDetails /></div> */}
     </div>
 
 
