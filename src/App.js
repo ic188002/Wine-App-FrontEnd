@@ -142,7 +142,7 @@ export default function App() {
           <div>
             <Routes>
               {/* This code to go in route path / -- <Signin login={loginHandler} /> */}
-              {/* <Route path="/" element={<WineList />}></Route> */}
+              <Route path="/" element={<WineList />}></Route>
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
               <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
@@ -174,9 +174,6 @@ export default function App() {
             </Routes>
             
           </div>
-          <WineDetails />
-          <WineList />
-
         </div>
       </Router>
     </div>

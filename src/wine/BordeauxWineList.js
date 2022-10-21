@@ -34,12 +34,22 @@ export default function BordeauxWineList() {
             
         </div>
     ))
-
+    const wineDetails=wineList.map((wine, index) =>(
+        <div key={index}>
+        <WineDetails {...wine}></WineDetails>
+        </div>
+    ))
   return (
+    <div className="wine-library">
     <div className="wine-list">
      <h1 className="section-wine-title">BordeauxWineList</h1>
      <span className="section-count">Number of Wines: {allWine.length}</span>
      {allWine}
+    </div>
+    <div className="wine-details">
+    <h1 className="section-wine-title">Details</h1>
+      {wineDetails}
+    </div>
 
     {/* <table>
     <tbody>
@@ -51,6 +61,8 @@ export default function BordeauxWineList() {
     </tbody> */}
    
 {/* </table> */}
+
+
 </div>
   )
 }
