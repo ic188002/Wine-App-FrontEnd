@@ -9,6 +9,11 @@ import { Alert } from "react-bootstrap"
 import WineList from './wine/WineList'
 import MalbecWineList from './wine/MalbecWineList'
 import ChardonnayWineList from './wine/ChardonnayWineList'
+import ChampagneWineList from './wine/ChampagneWineList'
+import PortWineList from './wine/PortWineList'
+import ShirazWineList from './wine/ShirazWineList'
+import CotesdurhoneWineList from './wine/CotesdurhoneWineList'
+import RiojaWineList from './wine/RiojaWineList'
 //ROUTING
 
 
@@ -125,6 +130,16 @@ export default function App() {
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
               <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
               <Route path="/chardonnaywinelist" element={<ChardonnayWineList></ChardonnayWineList>}></Route>
+              <Route path="/champagnewinelist" element={<ChampagneWineList />}></Route>
+              <Route path="/portwinelist" element={<PortWineList />}></Route>
+              <Route path="/shirazwinelist" element={<ShirazWineList />}></Route>
+              <Route path="/cotesdurhonewinelist" element={<CotesdurhoneWineList />}></Route>
+              <Route path="/riojawinelist" element={<RiojaWineList />}></Route>
+
+
+
+
+
             </Routes>
           </div>
         </div>
