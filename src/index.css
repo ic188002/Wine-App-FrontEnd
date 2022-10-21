@@ -1,8 +1,5 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -16,4 +13,30 @@ code {
   background-color: rgb(255, 179, 179);
   padding: 20px;
   text-align: center;
+}
+.Row {
+  color: rgb(179, 41, 41);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: 'Source Code Pro', monospace;
+}
+.Box {
+  background-color: rgb(255, 255, 255);
+  width: 20rem;
+  text-align: center;
+  height: 20rem;
+  margin: 30px;
+}
+.info {
+ 
+  top: 15rem;
+  margin-bottom: 0;
+  text-align: center;
+
+
+}
+.Bottle {
+  position: relative;
+  height: 80%;
 }
