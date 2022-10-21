@@ -11,10 +11,10 @@ import { Alert } from "react-bootstrap"
 
 export default function App() {
 
-
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
   const [message, setMessage] = useState(null);
+  let timer;
   //this will be exicuted 
   useEffect(() => {
     let token = localStorage.getItem("token")
@@ -30,6 +30,7 @@ export default function App() {
 
       }
     }
+
   }, [])
 
 
@@ -54,7 +55,8 @@ export default function App() {
           let user = jwt_decode(response.data.token)
           setIsAuth(true);
           setUser(user)
-          setMessage("User Logged Out Successfully")
+
+          setMessage("User Logged in Successfuly")
         }
       })
       .catch(error => {
@@ -68,20 +70,27 @@ export default function App() {
     localStorage.removeItem("token")
     setIsAuth(false)
     setUser(null)
+    setMessage("User Logged out Successfully")
+    
   }
 
+
+
+  
+
 const errMessage = message ? (
-  <Alert variant='success'>{message}</Alert>
+  
+  <Alert variant='success' onClose={()=>setMessage(null)} dismissible >{message}</Alert>
 ) : null
 
   return (
     <Router>
       <div>
-        {errMessage}
+        {errMessage} 
         <nav>
           {isAuth ? (
             <div>
-              {user ? "welcome" + user.user.id : null}&nbsp;
+              {user ? "Welcome " +  user.user.name : null}&nbsp;
               <Link to='/'>Home</Link>&nbsp;
               <Link to='/logout' onClick={onLogoutHandler}>Logout</Link>&nbsp;
             </div>
@@ -105,5 +114,4 @@ const errMessage = message ? (
         </div>
       </div>
     </Router>
-  )
-}
+  )}
