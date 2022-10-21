@@ -8,6 +8,7 @@ export default function WineList() {
     <div>
         <h1>WineList</h1>
         <p><Link to='/malbecwinelist'>Malbec Wines</Link></p>
+        <p><Link to="/chardonnaywinelist">Chardonnay Wines</Link></p>
 
 
     <div>

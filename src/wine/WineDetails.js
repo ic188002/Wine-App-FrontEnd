@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Wine(props) {
+export default function WineDetails (props) {
   return (
     
     <>
