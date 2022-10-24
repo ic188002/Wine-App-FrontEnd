@@ -98,7 +98,7 @@ code {
 
 .wine-list {
   position: relative;
-  flex: 1 0 33.333333%;
+  flex: 1 0 33.33333333333%;
   height: 100%;
   /* removed 3.6em padding to get rid of the buffer at the top */
   padding: 0 0;
@@ -110,11 +110,12 @@ code {
   display: grid;
   position: relative;
   grid-template-columns: 1fr 3fr;
-
   margin-bottom: 0.2rem;
   background-color: white;
 }
-
+.wine-summary:hover {
+  background-color: #f6f6f6;
+}
 .wine-summary {
   display: flex;
   justify-content: center;
@@ -304,4 +305,21 @@ nav {
 .price {
   padding: 2px;
   text-decoration: underline;
+}
+.wine-bottom {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.wine-info-row {
+  
+  text-align: center;
+}
+.tick-box {
+  
+  padding: 30px;
+  display: flex;
+  color: white;
+  align-items: center;
+  color: rgb(218, 25, 25);
 }

@@ -168,6 +168,8 @@ const wineCategories = wineData.wines
           </div>
         </div>
       </Router>
+      <br/><br/><br/><br/><br/>
+      <img className='wine-bottom' src='/images/winebottom1.png'/>
       <hr></hr>
       <footer id="footer">
         <p>WinesCompany</p>

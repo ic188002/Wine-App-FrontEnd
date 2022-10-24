@@ -37,6 +37,11 @@ export default function SignUp(props) {
             <Form.Label>Password</Form.Label>
             <Form.Control name='password' type="password" onChange={changeHandler}></Form.Control>
         </Form.Group>
+        <h6 className='tick-box'>
+        <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"/>
+         <label className="form-check-label">
+         Please confirm that you are of legal drinking age in your country to access this site.
+        </label> </h6>
         <Button  variant="light" onClick={registerHandler}>Register</Button>
     </Container>
     </div>

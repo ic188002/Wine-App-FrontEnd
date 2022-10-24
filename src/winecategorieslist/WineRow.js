@@ -13,7 +13,7 @@ export default function WineRow(props) {
       </div>
       <div className="wine-summary">
 
-        <h5>{props.title}</h5>
+        <h5 className="wine-info-row">{props.title}</h5>
         <h3 className="price">{props.price}</h3>
 
 
