@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Alert } from "react-bootstrap"
+// created an array of objects based on the winelist Classificaiton in spooncular (had to do this with hard data as Spooncular does not have an API to generate a full list of wines )
 import wineData from  './wineClassificationData'
 import WineIndex from './wineindex/WineIndex';
 import WineCategoriesList from './winecategorieslist/WineCategoriesList'
@@ -78,13 +79,17 @@ const wineCategories = wineData.wines
 
   }
 
-
+// This function load the winelist when a wine on the index is clicked 
   const loadWineList = (category) => {
+// it take the  winedata object as a parameter 
+//  it passes the Url through the API to generate get the list of wines 
     axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=1&apiKey=cf8ded1fa117496c820dea2d4b16fbdf`) 
   
     .then(response => {
         // console.log(response.data)
+  // we fetch the data from the API i save it in a variable call winelist 
         setWineList(response.data.recommendedWines)
+  // we fetch the data from our classfication data and save it in a variable called wineCategory
         setWineCategory(category)
     })
     .catch( error => {
@@ -135,8 +140,10 @@ const wineCategories = wineData.wines
             
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
+              {/* we pass the load wine function through tthe wineIndex page as a prop as well as the wine selected from the data from wineClassfication.js */}
               <Route path="/" element={<WineIndex loadWineList={loadWineList} wineCategories={wineCategories}/>}></Route>
-              <Route path = {`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
+              {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
+              <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
               
             </Routes>
             

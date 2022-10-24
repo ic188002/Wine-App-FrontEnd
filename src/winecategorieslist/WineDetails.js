@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function WineDetails(props) {
 
+  // this will be an onclick function , so we will need to pass a function through wineRow to grab the data, for now just mapped over
     const wineDetails=props.wineList.map((wine, index) =>(
         <div key={index}>
          <h5>{wine.title}</h5>

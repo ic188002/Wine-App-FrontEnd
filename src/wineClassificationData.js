@@ -1,4 +1,5 @@
 // as Spooncular did not have an api for classification created an database of these straight from there documents
+// added key value pairs for  type (for index display) & url so we had the right text to feed into the API 
 
 const wineData = {
  wines: [

@@ -27,6 +27,7 @@ code {
 .Box {
 
   color: rgb(179, 41, 41);
+  background-color:rgb(255, 179, 179);
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -35,6 +36,7 @@ code {
 .Box1 {
 
   color: rgb(90, 175, 103);
+  background-color: antiquewhite;
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -44,6 +46,7 @@ code {
 .Box3 {
 
   color: rgb(249, 115, 220);
+  background-color:rgb(243, 220, 238);
   width: 20rem;
   text-align: center;
   height: 20rem;

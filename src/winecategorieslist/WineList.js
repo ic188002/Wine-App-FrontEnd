@@ -1,7 +1,8 @@
 import React from 'react'
 import WineRow from './WineRow'
 
-
+// within the winelist component we render the details for WineRow.
+// an onclick function will need to be looped through wineRow to render the details for each particular wine
 
 
 export default function WineList(props) {
