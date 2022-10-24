@@ -44,8 +44,12 @@ export default function FavouriteList(props) {
 
   return (
     <div>
-        <h1>FavouriteList</h1>
-        
+        <div className='filter'>
+         <div className='title'>
+                <h1>Favourite Wine List</h1>
+            </div>
+            </div>
+        <hr></hr>
         <FavouritesCreateForm user={user} addNewWineNight={addNewWineNight}></FavouritesCreateForm>
     </div>
   )

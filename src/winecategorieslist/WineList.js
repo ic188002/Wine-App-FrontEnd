@@ -14,7 +14,7 @@ export default function WineList(props) {
 console.log(allWine)
   return (
      <div className="wine-list">
-     <h1 className="section-title"> {props.wineCategory.name} Wines</h1>
+     <h1 className="section-title"> {props.wineCategory.name}</h1>
      {allWine}
     </div>
   

@@ -11,6 +11,7 @@ import WineIndex from './wineindex/WineIndex';
 import WineCategoriesList from './winecategorieslist/WineCategoriesList'
 import FavouritesCreateForm from './favourites/FavouritesCreateForm'
 import FavouriteList from './favourites/FavouriteList'
+import Profile from './user/Profile'
 
 
 
@@ -119,25 +120,28 @@ const wineCategories = wineData.wines
 
   return (
     <div>
-   
       <Router>
         <div>
+  
+          <img className='wineByMe' src="/images/winebyme.png"/>
+  
           {errMessage}
           <nav>
             {isAuth ? (
               <div>
                 {user ? "Welcome " + user.user.name : null}&nbsp;
-                <Link to='/'>Home</Link>&nbsp;
-                <Link to='/logout' onClick={onLogoutHandler}>Logout</Link>&nbsp;
-                <Link to='/favouritewinelist'>Favourite Wine List</Link>&nbsp;
+                <Link to='/' style={{ color: 'black'}}>Home</Link>&nbsp;
+                <Link to='/logout' onClick={onLogoutHandler} style={{ color: 'black'}}>Logout</Link>&nbsp;
+                <Link to='/favouritewinelist' style={{ color: 'black'}}>Favourite Wine List</Link>&nbsp;
+                <Link to='/profile' style={{ color: 'black'}}>Profile</Link>&nbsp;
 
               </div>
             ) : (
               <div>
-                <Link to='/signup'>Signup</Link>&nbsp;
-                <Link to='/signin'>Signin</Link>&nbsp;
-                <Link to='/'>Home</Link>&nbsp;
-                <Link to='/favouritewinelist'>Favourite Wine List</Link>&nbsp;
+                <Link to='/signup' style={{color: 'black'}}>Signup</Link>&nbsp;
+                <Link to='/signin' style={{color: 'black'}}>Signin</Link>&nbsp;
+                <Link to='/' style={{color: 'black'}}>Home</Link>&nbsp;
+                <Link to='/favouritewinelist' style={{color: 'black'}}>Favourite Wine List</Link>&nbsp;
 
                 {/* <Link to='/malbecwines'>Malbec Wines</Link> */}
 
@@ -155,7 +159,7 @@ const wineCategories = wineData.wines
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
               <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
               <Route path='/favouritewinelist' element={isAuth ? <FavouriteList user={user.user.id}></FavouriteList> : <Signin login={loginHandler} />}></Route>
-
+              <Route path='/profile' element={<Profile></Profile>}> </Route>
             </Routes>
             
           </div>
@@ -164,6 +168,13 @@ const wineCategories = wineData.wines
           </div>
         </div>
       </Router>
+      <hr></hr>
+      <footer id="footer">
+        <p>WinesCompany</p>
+        <p>Build By Helene van Besouw, Rob Sesemann, Ivan Craig</p>
+        <p>2023</p>
+        
+      </footer>
     </div>
   )
 }
