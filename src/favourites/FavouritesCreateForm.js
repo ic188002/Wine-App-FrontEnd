@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 
 
 export default function FavouritesCreateForm(props) {
-
-    const [newWineNight, setNewWineNight] = useState({})
+    
+    const [newWineNight, setNewWineNight] = useState({user: props.user})
 
     const handleChange = (event) => {
         const attributeToChange = event.target.name
@@ -49,7 +49,7 @@ export default function FavouritesCreateForm(props) {
                 </div>
                 
                 <div>
-                    <input name='user' type='text' value={`${props.user}`} onChange={handleChange}></input>
+                    <input name='user' type='hidden' value={`${props.user}`}></input>
                 </div>
 
                 <div>
