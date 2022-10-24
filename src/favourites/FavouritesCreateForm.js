@@ -48,8 +48,13 @@ export default function FavouritesCreateForm(props) {
                 </div>
                 
                 <div>
+                    <input name='user' type='text' value={`${props.user}`} onChange={handleChange}></input>
+                </div>
+
+                <div>
                     <input type="submit" value="Add Wine Night"></input>
                 </div>
+                
             </form>
         </div>
     )
