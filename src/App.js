@@ -125,12 +125,16 @@ const wineCategories = wineData.wines
                 {user ? "Welcome " + user.user.name : null}&nbsp;
                 <Link to='/'>Home</Link>&nbsp;
                 <Link to='/logout' onClick={onLogoutHandler}>Logout</Link>&nbsp;
+                <Link to='/favouritewinelist'>Favourite Wine List</Link>&nbsp;
+
               </div>
             ) : (
               <div>
                 <Link to='/signup'>Signup</Link>&nbsp;
                 <Link to='/signin'>Signin</Link>&nbsp;
                 <Link to='/'>Home</Link>&nbsp;
+                <Link to='/favouritewinelist'>Favourite Wine List</Link>&nbsp;
+
                 {/* <Link to='/malbecwines'>Malbec Wines</Link> */}
 
               </div>
@@ -146,12 +150,13 @@ const wineCategories = wineData.wines
               <Route path="/" element={<WineIndex loadWineList={loadWineList} wineCategories={wineCategories}/>}></Route>
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
               <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
-              
+              <Route path='/favouritewinelist' element={<FavouriteList></FavouriteList>}></Route>
+
             </Routes>
             
           </div>
           <div>
-  <FavouriteList></FavouriteList>
+  {/* <FavouriteList></FavouriteList> */}
           </div>
         </div>
       </Router>

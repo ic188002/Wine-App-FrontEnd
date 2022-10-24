@@ -8,7 +8,7 @@ export default function FavouriteList() {
 
     const loadWineNight = () => {
         // Axios Code will go here
-        axios.get("favourites/index")
+        axios.get("favouritewine/index")
         .then(response => {
             console.log(response);
             // this is equivalent to this.setState in class components.
@@ -23,7 +23,7 @@ export default function FavouriteList() {
 
 
     const addNewWineNight = (wineNight) => {
-        axios.post("favourites/add", wineNight 
+        axios.post("favouritewine/add", wineNight 
         // ,{headers: {
         //     "Authorization": "Bearer " + localStorage.getItem("token")
         // } }
