@@ -1,45 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import Signup from './user/Signup'
 import Signin from './user/Signin'
-
-
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
-import Axios from 'axios'
+import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Alert } from "react-bootstrap"
-import WineList from './wine/WineList'
+// created an array of objects based on the winelist Classificaiton in spooncular (had to do this with hard data as Spooncular does not have an API to generate a full list of wines )
+import wineData from  './wineClassificationData'
+import WineIndex from './wineindex/WineIndex';
+import WineCategoriesList from './winecategorieslist/WineCategoriesList'
 
-import MalbecWineList from './wine/MalbecWineList'
-
-
-
-import BordeauxWineList from './wine/BordeauxWineList'
-import PinotGWineList from './wine/PinotGWineList'
-import PrimitivoWineList from './wine/PrimitivoWineList'
-import SauvignonWineList from './wine/SauvignonWineList'
-import CheninBlancWineList from './wine/CheninBlancWineList'
-
-import ChardonnayWineList from './wine/ChardonnayWineList'
-import RieslingWineList from './wine/RieslingWineList'
-import CabernetSauvignonWineList from './wine/CabernetSauvignonWineList'
-import MoscatoWineList from './wine/MoscatoWineList'
-import RoseWineList from './wine/RoseWineList'
-
-import ChampagneWineList from './wine/ChampagneWineList'
-import PortWineList from './wine/PortWineList'
-import ShirazWineList from './wine/ShirazWineList'
-import CotesdurhoneWineList from './wine/CotesdurhoneWineList'
-import RiojaWineList from './wine/RiojaWineList'
-import WineDetails from './wine/WineDetails'
 
 //ROUTING
 
 
 export default function App() {
 
+const wineCategories = wineData.wines
+
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
   const [message, setMessage] = useState(null);
+
+  const [wineList, setWineList] = useState([]);
+  const [wineCategory, setWineCategory] = useState([])
 
   //this will be exicuted 
   useEffect(() => {
@@ -58,7 +42,7 @@ export default function App() {
   }, [])
 
   const registerHandler = (user) => {
-    Axios.post("auth/signup", user)
+    axios.post("auth/signup", user)
       .then(response => {
         console.log(response);
       })
@@ -68,7 +52,7 @@ export default function App() {
   }
 
   const loginHandler = (cred) => {
-    Axios.post("auth/signin", cred)
+    axios.post("auth/signin", cred)
       .then(response => {
         console.log(response.data.token);
         if (response.data.token != null) {
@@ -95,23 +79,34 @@ export default function App() {
 
   }
 
-
+// This function load the winelist when a wine on the index is clicked 
+  const loadWineList = (category) => {
+// it take the  winedata object as a parameter 
+//  it passes the Url through the API to generate get the list of wines 
+    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=1&apiKey=cf8ded1fa117496c820dea2d4b16fbdf`) 
+  
+    .then(response => {
+        // console.log(response.data)
+  // we fetch the data from the API i save it in a variable call winelist 
+        setWineList(response.data.recommendedWines)
+  // we fetch the data from our classfication data and save it in a variable called wineCategory
+        setWineCategory(category)
+    })
+    .catch( error => {
+        console.log('Error Retreving Wines ')
+        console.log(error)
+    })
+  
+  }
+  console.log(wineList)
+  console.log(wineCategory)
+ 
 
   const errMessage = message ? (
 
     <Alert variant='success' onClose={() => setMessage(null)} dismissible >{message}</Alert>
   ) : null
 
-
-
-  Axios.get('https://api.spoonacular.com/food/wine/pairing?food=&apiKey=7a64dea7d5bb41f38bb3b24933947711')
-    .then(response => {
-      console.log(response.data)
-
-    })
-    .catch(error => {
-      console.log(error)
-    })
 
 
 
@@ -142,35 +137,14 @@ export default function App() {
           <div>
             <Routes>
               {/* This code to go in route path / -- <Signin login={loginHandler} /> */}
-              <Route path="/" element={<WineList />}></Route>
+            
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
               <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
-              <Route path="/malbecwinelist" element={<MalbecWineList />}></Route>
-             
-              <Route path="/chardonnaywinelist" element={<ChardonnayWineList></ChardonnayWineList>}></Route>
-
-              <Route path="/bordeauxwinelist" element={<BordeauxWineList></BordeauxWineList>}></Route>
-              <Route path="/pinotgrigiowinelist" element={<PinotGWineList></PinotGWineList>}></Route>
-              <Route path="/primitivowinelist" element={<PrimitivoWineList></PrimitivoWineList>}></Route>
-              <Route path="/sauvignonwinelist" element={<SauvignonWineList></SauvignonWineList>}></Route>
-              <Route path="/cheninblancwinelist" element={<CheninBlancWineList></CheninBlancWineList>}></Route>
-
-              <Route path="/rieslingwinelist" element={<RieslingWineList></RieslingWineList>}></Route>
-              <Route path="/cabernetsauvignonwinelist" element={<CabernetSauvignonWineList></CabernetSauvignonWineList>}></Route>
-              <Route path="/moscatowinelist" element={<MoscatoWineList></MoscatoWineList>}></Route>
-              <Route path="/rosewinelist" element={<RoseWineList></RoseWineList>}></Route>
-
-              <Route path="/champagnewinelist" element={<ChampagneWineList />}></Route>
-              <Route path="/portwinelist" element={<PortWineList />}></Route>
-              <Route path="/shirazwinelist" element={<ShirazWineList />}></Route>
-              <Route path="/cotesdurhonewinelist" element={<CotesdurhoneWineList />}></Route>
-              <Route path="/riojawinelist" element={<RiojaWineList />}></Route>
-
-
-
-
-
-
+              {/* we pass the load wine function through tthe wineIndex page as a prop as well as the wine selected from the data from wineClassfication.js */}
+              <Route path="/" element={<WineIndex loadWineList={loadWineList} wineCategories={wineCategories}/>}></Route>
+              {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
+              <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
+              
             </Routes>
             
           </div>

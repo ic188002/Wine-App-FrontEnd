@@ -15,15 +15,19 @@ code {
   text-align: center;
 }
 
-.Row {
-  display: flex;
+
+.Grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   flex-direction: row;
   justify-content: space-evenly;
-  font-family: 'Source Code Pro', monospace;
+ 
 }
+
 .Box {
 
   color: rgb(179, 41, 41);
+  background-color:rgb(255, 179, 179);
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -32,6 +36,7 @@ code {
 .Box1 {
 
   color: rgb(90, 175, 103);
+  background-color: antiquewhite;
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -41,6 +46,7 @@ code {
 .Box3 {
 
   color: rgb(249, 115, 220);
+  background-color:rgb(243, 220, 238);
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -51,9 +57,15 @@ code {
   top: 15rem;
   margin-bottom: 0;
   text-align: center;
-
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
 
 }
+
 .Bottle {
   position: relative;
   height: 80%;
@@ -69,10 +81,11 @@ code {
 
 }
 .wine-list {
-position: relative;
+   position: relative;
   flex: 1 0 33.333333%;
   height: 100%;
-  padding: 3.6em 0 0;
+  /* removed 3.6em padding to get rid of the buffer at the top */
+  padding:  0 0;
   overflow-y: scroll;
   background-color: #f0f0f0;
 }
@@ -83,7 +96,6 @@ position: relative;
   grid-template-columns: 1fr 3fr;
 
   margin-bottom: 0.2rem;
-  font-size: 0.5em;
   background-color: white;
 }
 
@@ -91,8 +103,8 @@ position: relative;
   padding: 0.5em 1.5em;
   background-color: white;
 }
-
-.section-count {
+/* 
+/* .section-count {
   display: inline-block;
   background-color: white;
   color: black;
@@ -101,7 +113,7 @@ position: relative;
   border-radius: 20%;
   margin-left: 0.5em;
   font-weight: bold;
-}
+} */ */
 
 .wine-details {
   position: relative;
@@ -109,6 +121,7 @@ position: relative;
 
 }
 
+/* Aligns detials dive and wine list div side by side */
 .wine-library {
   position: relative;
   display: flex;
@@ -118,7 +131,30 @@ position: relative;
   justify-content: space-around;
 }
 
-.wine-details > .section-title {
+
+.section-title{
+  position: relative;
+  top: 0;
+  z-index: 10;
+  background-color: #777;
+  color: white;
+  text-align: center;
+  font-size: 0.75em;
+  padding: 0.5em;
+  margin: 0 0 0.1em;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.wine-detail {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  margin-bottom: 2em;
+}
+/* .wine-details > .section-title{
   left: 33.333333%;
   width: 66.666666%;
 }
@@ -126,4 +162,4 @@ position: relative;
 .wine-list > .section-title {
   width: 33.333333%;
   left: 0;
-}
+} */
