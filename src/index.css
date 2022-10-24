@@ -207,3 +207,51 @@ code {
   padding: 20px;
 
 }
+.favForm {
+  background-color: rgb(225, 225, 225);
+  padding: 40px;
+}
+.favFormInner {
+  padding: 30px;
+  display: flex;
+  border-top: rgb(255, 255, 255) 5px dotted;
+}
+label {
+  color: #777;
+  padding: 10px;
+}
+input {
+  background-color: rgb(254, 254, 254);
+  float: right;
+  border: 1px solid grey;
+}
+.whiteBottle:hover {
+  filter: brightness(80%);
+}
+.redBottle:hover {
+  filter: brightness(80%);
+}
+.title {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  text-decoration: underline;
+}
+.btn {
+  position:absolute;
+  right: 40px;
+  top:45%;
+}
+.wineBox {
+
+  width: 220px;
+  background-size:contain;
+}
+.wineImage {
+  background-size:contain;
+ 
+}
+.wineBoxCenter {
+  display: flex;
+  justify-content: center;
+}
