@@ -9,6 +9,8 @@ import { Alert } from "react-bootstrap"
 import wineData from  './wineClassificationData'
 import WineIndex from './wineindex/WineIndex';
 import WineCategoriesList from './winecategorieslist/WineCategoriesList'
+import FavouritesCreateForm from './favourites/FavouritesCreateForm'
+import FavouriteList from './favourites/FavouriteList'
 
 
 //ROUTING
@@ -83,7 +85,7 @@ const wineCategories = wineData.wines
   const loadWineList = (category) => {
 // it take the  winedata object as a parameter 
 //  it passes the Url through the API to generate get the list of wines 
-    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=1&apiKey=cf8ded1fa117496c820dea2d4b16fbdf`) 
+    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=6&apiKey=cf8ded1fa117496c820dea2d4b16fbdf`) 
   
     .then(response => {
         // console.log(response.data)
@@ -147,6 +149,9 @@ const wineCategories = wineData.wines
               
             </Routes>
             
+          </div>
+          <div>
+  <FavouriteList></FavouriteList>
           </div>
         </div>
       </Router>

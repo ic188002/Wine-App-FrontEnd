@@ -8,6 +8,7 @@ export default function WineRow(props) {
     
       <h5>{props.title}</h5>
       <h5>{props.price}</h5>
+
     </div>
   </div>
   )
