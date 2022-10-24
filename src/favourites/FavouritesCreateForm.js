@@ -26,7 +26,7 @@ export default function FavouritesCreateForm(props) {
 
     return (
         <div>
-            <h1>Favourites Form</h1>
+            <h2 className='favForm'>Favourites Form</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name:</label>
@@ -46,6 +46,7 @@ export default function FavouritesCreateForm(props) {
                         <option value="celebrations">Celebrations</option>
                     </select>
                 </div>
+                
                 <div>
                     <input type="submit" value="Add Wine Night"></input>
                 </div>

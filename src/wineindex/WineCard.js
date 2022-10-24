@@ -24,6 +24,7 @@ else if (props.type === 'white' || 'champ'){
 
 
   return (
+    
     // data we are displaying in each card 
    <div onClick={props.loadWineList} className={className}>
     <img className='Bottle' src={image} alt = "" />

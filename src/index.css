@@ -3,6 +3,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+
+}
+* {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
 a {
   text-decoration: 'none'
@@ -29,7 +34,7 @@ code {
 .Box {
 
   color: rgb(179, 41, 41);
-  background-color:rgb(255, 179, 179);
+ 
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -38,7 +43,7 @@ code {
 .Box1 {
 
   color: rgb(90, 175, 103);
-  background-color: antiquewhite;
+ 
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -48,7 +53,7 @@ code {
 .Box3 {
 
   color: rgb(249, 115, 220);
-  background-color:rgb(243, 220, 238);
+  
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -165,3 +170,40 @@ code {
   width: 33.333333%;
   left: 0;
 } */
+
+
+.filter {
+  padding: 20px;
+  background-color: rgb(231, 231, 231);
+  display: flex;
+  /* transition: transform .4s; */
+   justify-content: flex-end; 
+
+}
+.filter:hover {
+  padding: 20px;
+  background-color: rgb(231, 231, 231);
+  display: flex;
+  justify-content: flex-end;
+  /* filter: brightness(80%); */
+
+}
+.filterby {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  color: rgb(107, 107, 107);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+
+}
+.filterby:hover {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  color: rgb(70, 70, 70);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+}

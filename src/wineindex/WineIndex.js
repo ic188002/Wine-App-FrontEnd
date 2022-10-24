@@ -28,7 +28,12 @@ export default function WineIndex(props) {
 
   return (
    <div>
-    <h1>Wine Categories</h1> 
+    <h1>Wine Categories</h1>
+    <div className='filter'>
+    <h2 className='filterby'>Filter By</h2>
+    <img src='images/redbottle.png' height='100px'/>
+    <img src='images/whitebottle.png' height='100px'/>
+    </div> 
     <div className='Grid'>
 
      {wineIndex}
