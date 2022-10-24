@@ -34,7 +34,7 @@ export default function FavouritesCreateForm(props) {
                 </div>
                 <div>
                     <label>Description:</label>
-                    <input name='Description' type='text' onChange={handleChange}></input>
+                    <input name='description' type='text' onChange={handleChange}></input>
                 </div>
                 <div>
                     <label>Wine Night</label>
