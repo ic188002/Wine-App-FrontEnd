@@ -3,9 +3,9 @@ import React from 'react'
 import FavouritesCreateForm from './FavouritesCreateForm'
 import { useState } from 'react'
 
-export default function FavouriteList() {
+export default function FavouriteList(props) {
     const [wineNights, setWineNights] = useState([]);
-
+    let user = props.user
     const loadWineNight = () => {
         // Axios Code will go here
         axios.get("favouritewine/index")
@@ -46,7 +46,7 @@ export default function FavouriteList() {
     <div>
         <h1>FavouriteList</h1>
         
-        <FavouritesCreateForm addNewWineNight={addNewWineNight}></FavouritesCreateForm>
+        <FavouritesCreateForm user={user} addNewWineNight={addNewWineNight}></FavouritesCreateForm>
     </div>
   )
 }

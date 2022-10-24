@@ -150,7 +150,7 @@ const wineCategories = wineData.wines
               <Route path="/" element={<WineIndex loadWineList={loadWineList} wineCategories={wineCategories}/>}></Route>
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
               <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
-              <Route path='/favouritewinelist' element={<FavouriteList></FavouriteList>}></Route>
+              <Route path='/favouritewinelist' element={isAuth ? <FavouriteList user={user.user.id}></FavouriteList> : <Signin login={loginHandler} />}></Route>
 
             </Routes>
             
