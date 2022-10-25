@@ -4,6 +4,7 @@ import React from 'react'
 export default function WineDetails(props) {
 
   let currentWine = props.currentWine
+  let details;
   // this will be an onclick function , so we will need to pass a function through wineRow to grab the data, for now just mapped over
   // const wineDetails=props.wineList.map((wine, index) =>(
   //     <div key={index}>
@@ -17,22 +18,43 @@ export default function WineDetails(props) {
     console.log(wineId)
   }
 
-  return (
-    <div className="wine-details">
-      <h1 className="section-title">Details</h1>
-      <div className='wine-detail-inner'>
-        <div className='image-details'><img className='image-detail-full' src={currentWine.imageUrl} alt=""></img>
+
+
+
+  if (currentWine) {
+    details =
+      <div className="wine-details">
+        <div className='wine-detail-inner'>
+          <div className='image-details'><img className='image-detail-full' src={currentWine.imageUrl} alt=""></img>
+          </div>
+          <h5 className='wine-title-detail'>{currentWine.title}</h5>
+          <div >
+            <p className='description-wine'>{currentWine.description}</p>
+          </div>
+          <h3>{currentWine.price}</h3>
+          <br />
+          <p><a href={currentWine.link}>Buy Here</a></p>
+          <br />
+          <button onClick={pushId}>Add To Favourites</button>
         </div>
-        <h5 className='wine-title-detail'>{currentWine.title}</h5>
-        <div className='description-wine'>
-        <p>{currentWine.description}</p>
-        </div>
-        <h3>{currentWine.price}</h3>
-        <br/>
-        <p><a href={currentWine.link}>Buy Here</a></p>
-        <br/>
-        <button onClick={pushId}>Add To Favourites</button>
       </div>
+
+  } else {
+    details =
+    <div className="wine-details">
+        <p>
+          <span>No Wine Selected</span>
+        </p>
+        <img src='/images/logo.png' alt=''/>
+      </div>
+  }
+  return (
+    <div className="film-details">
+      <h1 className="section-title">DETAILS</h1>
+      {details}
+
     </div>
+
+
   )
 }
