@@ -135,11 +135,6 @@ code {
   margin-left: 0.5em;
   font-weight: bold;
 } */
-*/ .wine-details {
-  position: relative;
-  overflow-y: scroll;
-
-}
 
 /* Aligns detials dive and wine list div side by side */
 .wine-library {
@@ -323,4 +318,17 @@ nav {
   color: white;
   align-items: center;
   color: rgb(218, 25, 25);
+}
+
+/* WINES DETAILS PAGE */
+
+.image-detail-inner {
+  display: flex;
+ 
+}
+.image-details {
+  background-size: cover;
+}
+.wine-title-detail {
+
 }

@@ -139,7 +139,6 @@ const addNewWineNight = (wineNight) => {
         console.log(error)
         console.log("Error");
     }) 
-
 }
 
    
