@@ -15,6 +15,8 @@ export default function WineIndex(props) {
 
   // console.log(wineCategoryName)
 
+
+
   // looped over each object in the wine data array to create the winecards for the index page 
 
    const wineIndex = props.wineCategories.map((category, index) => (

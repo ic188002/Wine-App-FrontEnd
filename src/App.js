@@ -219,7 +219,6 @@ const editView = (id) => {
               <Route path='/favouritewinelist' element={isAuth ? <FavouriteList favouriteWine_Id={currentFavouriteWine._id} favouriteWine={currentFavouriteWine} wineNights={wineNights} onClick={loadWineNight(user.user.id)} user={user.user.id} editView={editView}></FavouriteList> : <Signin login={loginHandler} />}></Route>
               <Route path = '/createfavouritewinelist' element={isAuth ? <FavouritesCreateForm user={user.user.id} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> : <Signin login={loginHandler} />}></Route>
               <Route path='/profile' element={<Profile></Profile>}> </Route>
-
             </Routes>
             
           </div>
