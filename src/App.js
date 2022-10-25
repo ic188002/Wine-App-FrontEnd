@@ -32,6 +32,8 @@ const wineCategories = wineData.wines
   const [wineCategory, setWineCategory] = useState([])
   const [wineNights, setWineNights] = useState([]);
 
+  const [isEdit, setIsEdit] = useState(false);
+  const [currentFavouriteWine, setCurrentFavouriteWine] = useState({})
 
   //this will be exicuted 
    useEffect(() => {
@@ -141,7 +143,16 @@ const addNewWineNight = (wineNight) => {
     }) 
 }
 
-   
+const editView = (id) => {
+  axios.get(`favouritewine/edit?_id=${id}`)
+  .then(response => {
+    console.log(response.data.favouriteWine)
+    let favouriteWine = response.data.favouriteWine
+    console.log("Loaded favouritewine information")
+    setIsEdit(true)
+    setCurrentFavouriteWine(favouriteWine)
+  })
+}
  
 
   
@@ -205,7 +216,7 @@ const addNewWineNight = (wineNight) => {
               <Route path="/" element={<WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories}/>}></Route>
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
               <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
-              <Route path='/favouritewinelist' element={isAuth ? <FavouriteList wineNights={wineNights} onClick={loadWineNight(user.user.id)} user={user.user.id}></FavouriteList> : <Signin login={loginHandler} />}></Route>
+              <Route path='/favouritewinelist' element={isAuth ? <FavouriteList favouriteWine_Id={currentFavouriteWine._id} favouriteWine={currentFavouriteWine} wineNights={wineNights} onClick={loadWineNight(user.user.id)} user={user.user.id} editView={editView}></FavouriteList> : <Signin login={loginHandler} />}></Route>
               <Route path = '/createfavouritewinelist' element={isAuth ? <FavouritesCreateForm user={user.user.id} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> : <Signin login={loginHandler} />}></Route>
               <Route path='/profile' element={<Profile></Profile>}> </Route>
 
