@@ -281,8 +281,9 @@ nav {
 }
 
 .form {
+  margin-top: 40px;
   background-color: rgb(221, 221, 221);
-  width: 40%;
+  width: 37%;
   padding: 30px;
   display: flex;
   flex-direction: column;
