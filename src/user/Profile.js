@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-console.log()
 
 export default function Profile(props) {
 
@@ -15,3 +14,5 @@ export default function Profile(props) {
 
     )
 }
+
+
