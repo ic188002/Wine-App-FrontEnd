@@ -7,6 +7,8 @@ export default function FavouritesCreateForm(props) {
 
     const [newWineNight, setNewWineNight] = useState({ user: props.user })
 
+    
+
     const handleChange = (event) => {
         const attributeToChange = event.target.name
         const newValue = event.target.value
@@ -40,7 +42,7 @@ export default function FavouritesCreateForm(props) {
                 </div>
                 <div>
                     <label>Wine Night</label>
-                    <select name="wineNights" id="wineNights">
+                    <select name="wineNights" id="wineNights" onChange={handleChange}>
                         <option value="romanticNight">Romantic Night</option>
                         <option value="dinnerParty">Dinner Party</option>
                         <option value="cheapAndCheerful">Cheap And Cheerful</option>

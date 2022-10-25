@@ -6,12 +6,15 @@ import WineRow from './WineRow'
 
 
 export default function WineList(props) {
+
+
+
     const allWine= props.wineList.map((wine, index) => (
-        <div key={index}>
+        <div onClick={() => props.wineDetails(wine)}  key={index}>
         <WineRow {...wine}></WineRow>   
     </div>))
 
-console.log(allWine)
+// console.log(allWine)
   return (
      <div className="wine-list">
      <h1 className="section-title"> {props.wineCategory.name}</h1>
