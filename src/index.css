@@ -338,6 +338,70 @@ nav {
 }
 .description-wine {
   padding: 50px;
-
   font-size: 18px;
+}
+.overlay {
+  text-align: center;
+}
+
+
+
+.wine-night {
+  background-color: rgb(255, 217, 217);
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 40px;
+  min-width: 40%;
+  border-bottom: #777 3px solid;
+  border-right: #777 3px solid;
+  color:rgb(53, 53, 53);
+  transition: 5ms;
+}
+.wine-night:hover {
+  background-color: rgb(255, 214, 214);
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 40px;
+  min-width: 40%;
+  border-bottom: #777 4px solid;
+  border-right: #777 4px solid;
+}
+.wine-night-full-div {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 45px;
+
+}
+.fav-list-image {
+  float: right;
+}
+.button-fav-wines-edit {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: rgb(53, 53, 53) 1px solid;
+}
+.button-fav-wines-edit:hover {
+ background-color: rgb(228, 228, 228);
+}
+.button-fav-wines-delete {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: none;
+  border-left: none;
+}
+.button-fav-wines-delete:hover {
+ background-color: rgb(228, 228, 228);
+}
+.fav-wine-list-info {
+  text-align: center;
+  font-size: 1.2vw
+}
+.fav-list-description {
+  font-size: 1.2vw;
+}
+.fav-list-event {
+  font-size: 1.5vw;
 }

@@ -1,5 +1,10 @@
 import axios from 'axios'
 import React from 'react'
+import Button from 'react-bootstrap/Button';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+
+
 
 export default function WineDetails(props) {
 
@@ -33,19 +38,38 @@ export default function WineDetails(props) {
           </div>
           <h3>{currentWine.price}</h3>
           <br />
-          <p><a href={currentWine.link}>Buy Here</a></p>
+
           <br />
-          <button onClick={pushId}>Add To Favourites</button>
-        </div>
+
+          <OverlayTrigger
+            trigger="click"
+            overlay={
+              <Popover id={'popover-positioned-top'}>
+                <Popover.Header as="h3">{''}</Popover.Header>
+                <Popover.Body>
+                  <div className='overlay'>
+                    <strong>Please Come Back To Us</strong><p><a href={currentWine.link}>Click Here To Buy</a></p>
+                  </div>
+                </Popover.Body>
+              </Popover>
+            }
+          >
+            <Button variant="secondary">Buy Here</Button>
+          </OverlayTrigger>
+     
+        <br /><br />
+        <button onClick={pushId}>Add To Favourites</button>
       </div>
+      </div>
+
 
   } else {
     details =
-    <div className="wine-details">
+      <div className="wine-details">
         <p>
           <span>No Wine Selected</span>
         </p>
-        <img src='/images/logo.png' alt=''/>
+        <img src='/images/logo.png' alt='' />
       </div>
   }
   return (

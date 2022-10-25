@@ -31,11 +31,11 @@ export default function FavouritesEditForm(props) {
                 <h1>Update A Wine Categorie</h1>
                 <div>
                     <label>Name:</label>
-                    <input name='name' type='text' onChange={handleChange}></input>
+                    <input name='name' type='text' onChange={handleChange} value={newFavourites.name}></input>
                 </div>
                 <div>
                     <label>Description:</label>
-                    <input name='description' type='text' onChange={handleChange}></input>
+                    <input name='description' type='text' onChange={handleChange} value={newFavourites.description}></input>
                 </div>
                 <div>
                     <label>Wine Night</label>

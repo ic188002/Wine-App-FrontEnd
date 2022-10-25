@@ -12,10 +12,7 @@ export default function FavouriteList(props) {
     const [currentFavouriteWine, setCurrentFavouriteWine] = useState({});
   // const { wineId } = useParams()
 
-useEffect(() => {
-
-
-    
+useEffect(() => {    
     }, [])    
 
 
@@ -55,9 +52,21 @@ const allWineList = props.wineNights.map((list, index) => (
   return (
     <div>
        
-                <h1>Favourite Wine List</h1>
+       <div className='filter'>
+        <div className='title'>
+          <h1>Favourite Wine List</h1>
+        </div>
+        </div>
+        <hr/>
+        <div >
+            <h5 className='fav-wine-list-info'>
+                 Create A favourite wine list For any event, whether A wedding, dinner party or just a collection of you're favourites!
+            </h5>
+        </div>
+        <hr/>
       {allWineList}
         <hr></hr>
+        
         <FavouritesEditForm currentFavouriteWine_id={currentFavouriteWine._Id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} />
     </div>
   )
