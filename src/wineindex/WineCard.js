@@ -2,7 +2,6 @@ import React from 'react'
 
 
 export default function WineCard(props) {
-
    const image = `/images/${props.type}.png`
     let className;
 
@@ -26,7 +25,7 @@ else if (props.type === 'white' || 'champ'){
   return (
     
     // data we are displaying in each card 
-   <div onClick={props.loadWineList} className={className}>
+   <div onClick={props.loadWineIndex} className={className}>
     <img className='Bottle' src={image} alt = "" />
     <h2 className='info'>{props.name} Wines</h2>
     </div>
