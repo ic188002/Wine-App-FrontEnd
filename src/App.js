@@ -111,7 +111,7 @@ const wineCategories = wineData.wines
   const loadWineNight = (user) => {
     // Axios Code will go here
     // console.log(user)
-    axios.get(`favouritewine/index/?id=${user}`)
+    axios.get(`favouritewine/index/?_id=${user}`)
     .then(response => {
       // console.log('clicked')
         // console.log(response.data.user.favouritewine);
@@ -165,7 +165,7 @@ const addNewWineNight = (wineNight) => {
       <Router>
         <div>
   
-          <img className='wineByMe' src="/images/winebyme.png"/>
+          <img className='wineByMe' src="/images/winebyme.png" alt=""/>
   
           {errMessage}
           <nav>
@@ -218,7 +218,7 @@ const addNewWineNight = (wineNight) => {
         </div>
       </Router>
       <br/><br/><br/><br/><br/>
-      <img className='wine-bottom' src='/images/winebottom1.png'/>
+      <img className='wine-bottom' src='/images/winebottom1.png' alt=""/>
       <hr></hr>
       <footer id="footer">
         <p>WinesCompany</p>

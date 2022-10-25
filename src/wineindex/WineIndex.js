@@ -37,8 +37,8 @@ export default function WineIndex(props) {
         </div>
         <div className='filterby'>
           <h2>Filter By.</h2>
-          <img className='redBottle' src='images/redbottle.png' height='100px' />
-          <img className='whiteBottle' src='images/whitebottle.png' height='100px' />
+          <img className='redBottle' src='images/redbottle.png' height='100px' alt=""/>
+          <img className='whiteBottle' src='images/whitebottle.png' height='100px' alt="" />
         </div>
       </div>
       <hr/>
