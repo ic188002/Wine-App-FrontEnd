@@ -200,7 +200,7 @@ const addNewWineNight = (wineNight) => {
               {/* This code to go in route path / -- <Signin login={loginHandler} /> */}
             
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
-              <Route path="/signin" element={<Signin login={loginHandler} />}></Route>
+              <Route path="/signin" element={isAuth ? <WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories}/> : <Signin login={loginHandler}/>}></Route>
               {/* we pass the load wine function through tthe wineIndex page as a prop as well as the wine selected from the data from wineClassfication.js */}
               <Route path="/" element={<WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories}/>}></Route>
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
