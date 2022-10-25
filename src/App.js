@@ -174,21 +174,21 @@ const addNewWineNight = (wineNight) => {
               <div>
                 {user ? "Welcome " + user.user.name : null}&nbsp;
 
-                <Link to='/' style={{ color: 'black'}}>Home</Link>&nbsp;
-                <Link to='/logout' onClick={onLogoutHandler} style={{ color: 'black'}}>Logout</Link>&nbsp;
-                <Link to= '/createfavouritewinelist' style={{ color: 'black'}}>Create a Wine List</Link>
-                <Link to='/favouritewinelist' style={{ color: 'black'}}>Favourite Wine List</Link>&nbsp;
+                <Link to='/' style={{ color: 'black'}}>Home</Link>&nbsp;&nbsp;
+                <Link to='/logout' onClick={onLogoutHandler} style={{ color: 'black'}}>Logout</Link>&nbsp;&nbsp;
+                <Link to= '/createfavouritewinelist' style={{ color: 'black'}}>Create a Wine List</Link>&nbsp;&nbsp;
+                <Link to='/favouritewinelist' style={{ color: 'black'}}>Favourite Wine List</Link>&nbsp;&nbsp;
 
 
               </div>
             ) : (
               <div>
 
-                <Link to='/signup' style={{color: 'black'}}>Signup</Link>&nbsp;
-                <Link to='/signin' style={{color: 'black'}}>Signin</Link>&nbsp;
-                <Link to='/' style={{color: 'black'}}>Home</Link>&nbsp;
-                <Link to='/favouritewinelist' style={{color: 'black'}}>Favourite Wine List</Link>&nbsp;
-                 <Link to='/profile' style={{ color: 'black'}}>Profile</Link>&nbsp;
+                <Link to='/signup' style={{color: 'black'}}>Signup</Link>&nbsp;&nbsp;
+                <Link to='/signin' style={{color: 'black'}}>Signin</Link>&nbsp;&nbsp;
+                <Link to='/' style={{color: 'black'}}>Home</Link>&nbsp;&nbsp;
+                <Link to='/favouritewinelist' style={{color: 'black'}}>Favourite Wine List</Link>&nbsp;&nbsp;
+                 <Link to='/profile' style={{ color: 'black'}}>Profile</Link>&nbsp;&nbsp;
 
 
                 {/* <Link to='/malbecwines'>Malbec Wines</Link> */}
