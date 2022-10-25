@@ -3,6 +3,7 @@ import React from 'react'
 import FavouritesCreateForm from './FavouritesCreateForm'
 import { useState, useEffect } from 'react'
 import FavouriteListRow from './FavouriteListRow'
+import FavouritesEditForm from './FavouritesEditForm'
 export default function FavouriteList(props) {
   
 
@@ -12,11 +13,10 @@ useEffect(() => {
     
     }, [])    
 
-
    
 const allWineList = props.wineNights.map((list, index) => (
     <div key={index}>
-        <FavouriteListRow {...list}> </FavouriteListRow>
+        <FavouriteListRow {...list} editView={props.editView} > </FavouriteListRow>
     </div>
 ))
 
@@ -25,9 +25,8 @@ const allWineList = props.wineNights.map((list, index) => (
        
                 <h1>Favourite Wine List</h1>
       {allWineList}
-
         <hr></hr>
-        
+        <FavouritesEditForm favouriteWine_Id={props.favouriteWine_Id} favouriteWine={props.favouriteWine} />
     </div>
   )
 }

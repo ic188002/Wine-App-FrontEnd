@@ -12,6 +12,7 @@ export default function FavouriteListRow(props) {
     <p>{props.wineNights}</p>
     <p>{props._id}</p>
     <hr></hr>
+    <button onClick={() => {props.editView(props._id)}}>Edit</button>
     </div>
   )
 }
