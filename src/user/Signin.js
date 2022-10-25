@@ -28,7 +28,8 @@ export default function Signin(props) {
             <Form.Label>Password</Form.Label>
             <Form.Control name='password' type="password" onChange={changeHandler}></Form.Control>
         </Form.Group>
-        <Button variant="primary" onClick={loginHandler}>Login</Button>
+        
+        <Button  variant="light" onClick={loginHandler}>Login</Button>
     </Container></div>
   )
 }

@@ -14,12 +14,13 @@ export default function WineCategoriesList(props) {
    
   // the main page/ 'div' that hold or our winelist details'
   return (
-  
-      <div className="wine-library">
+
+    <div className="wine-library">
       {/* within this we render the display for our WineList component  and winedetails components */}
       <WineList wineDetails={handleDetailsClick} wineList={props.wineList}  wineCategory={props.wineCategory}></WineList>  
       <WineDetails currentWine={currentWine}></WineDetails>
       </div>
     
+
   )
 }

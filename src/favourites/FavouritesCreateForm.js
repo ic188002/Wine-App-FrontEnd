@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 
 
 export default function FavouritesCreateForm(props) {
-    
-    const [newWineNight, setNewWineNight] = useState({user: props.user})
+
+    const [newWineNight, setNewWineNight] = useState({ user: props.user })
 
     
 
@@ -28,8 +28,10 @@ export default function FavouritesCreateForm(props) {
 
     return (
         <div>
-            <h2 className='favForm'>Favourites Form</h2>
-            <form onSubmit={handleSubmit}>
+            <div className='form1'>
+           <div className='form'>
+            <form onSubmit={handleSubmit} className="form">
+                <h1>Add A Wine Categorie</h1>
                 <div>
                     <label>Name:</label>
                     <input name='name' type='text' onChange={handleChange}></input>
@@ -48,16 +50,19 @@ export default function FavouritesCreateForm(props) {
                         <option value="celebrations">Celebrations</option>
                     </select>
                 </div>
-                
+
                 <div>
                     <input name='user' type='hidden' value={`${props.user}`}></input>
                 </div>
-
+                <br/>
                 <div>
                     <input type="submit" value="Add Wine Night"></input>
                 </div>
-                
+
             </form>
-        </div>
+            </div>
+            </div>
+        </div >
+
     )
 }

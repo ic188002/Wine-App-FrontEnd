@@ -31,6 +31,11 @@ const wineData = {
         type: "white",
         url: "chenin_blanc"
     },
+    {
+        name: "Rose",
+        type: "rose",
+        url: 'rose'
+    },
 
     {
         name: "Cotes Du Rhone ",
@@ -75,12 +80,7 @@ const wineData = {
         url: "rioja"
     },
 
-    {
-        name: "Rose",
-        type: "rose",
-        url: 'rose'
-    },
-
+ 
     {
         name: "Sauvignon Blanc",
         type: "white",

@@ -1,6 +1,6 @@
 
 import React from 'react'
-import WineCard from  './WineCard'
+import WineCard from './WineCard'
 import { Link } from "react-router-dom"
 
 
@@ -26,23 +26,31 @@ export default function WineIndex(props) {
     
     // console.log(props.wineList)
 
-  return (
-   <div>
-    <h1>Wine Categories</h1>
-    <div className='filter'>
-    <h2 className='filterby'>Filter By</h2>
-    <img src='images/redbottle.png' height='100px'/>
-    <img src='images/whitebottle.png' height='100px'/>
-    </div> 
-    <div className='Grid'>
 
-     {wineIndex}
-    </div>
+  return (
     <div>
-     {/* <WineList wineList={wineList}  wineCategoryName={wineCategoryName}></WineList>  */}
+
+
+      <div className='filter'>
+        <div className='title'>
+          <h1>Wine Categories</h1>
+        </div>
+        <div className='filterby'>
+          <h2>Filter By.</h2>
+          <img className='redBottle' src='images/redbottle.png' height='100px' />
+          <img className='whiteBottle' src='images/whitebottle.png' height='100px' />
+        </div>
+      </div>
+      <hr/>
+      <div className='Grid'>
+
+        {wineIndex}
+      </div>
+      <div>
+        {/* <WineList wineList={wineList}  wineCategoryName={wineCategoryName}></WineList>  */}
+      </div>
     </div>
-     </div>
-  
+
   )
 }
 

@@ -56,11 +56,17 @@ const allWineList = props.wineNights.map((list, index) => (
 
   return (
     <div>
-        <h1>FavouriteList</h1>
-        <hr></hr>
-        {allWineList}
-        
         {/* <FavouritesCreateForm user={user} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> */}
+        <div className='filter'>
+         <div className='title'>
+                <h1>Favourite Wine List</h1>
+      {allWineList}
+            </div>
+
+            </div>
+        <hr></hr>
+//         <FavouritesCreateForm user={user} addNewWineNight={addNewWineNight}></FavouritesCreateForm>
+
     </div>
   )
 }
