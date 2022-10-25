@@ -2,14 +2,15 @@ import React from 'react'
 import { useState } from 'react'
 
 export default function FavouritesEditForm(props) {
-    const [newFavourites, setNewFavourites] = useState(props.wineNights)
+    const [newFavourites, setNewFavourites] = useState(props.favouriteWine)
+    // console.log(props.favouriteWine)
 
     const handleChange = (e) => {
         const attributeToChange = e.target.name
         const newValue = e.target.value
 
         const favourites = {...newFavourites}
-        // favourites[attributeToChange = newValue]
+        favourites[attributeToChange] = newValue
         console.log(favourites)
         setNewFavourites(favourites)
     }
@@ -19,6 +20,8 @@ export default function FavouritesEditForm(props) {
         props.editFavourites(newFavourites);
         e.target.reset();
     }
+
+    
 
   return (
 <div>
