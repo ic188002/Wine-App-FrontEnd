@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 
 export default function WineDetails(props) {
@@ -11,6 +12,10 @@ export default function WineDetails(props) {
   //     <h5>{wine.price}</h5>
   //     </div>
   // ))
+  const pushId = (e, favWine, response) => {
+    const wineId = currentWine.id
+    console.log(wineId)
+  }
 
   return (
     <div className="wine-details">
@@ -18,9 +23,15 @@ export default function WineDetails(props) {
       <div className='wine-detail-inner'>
         <div className='image-details'><img className='image-detail-full' src={currentWine.imageUrl} alt=""></img>
         </div>
-        <div className='wine-title-detail'></div><h5>{currentWine.title}</h5>
+        <h5 className='wine-title-detail'>{currentWine.title}</h5>
+        <div className='description-wine'>
         <p>{currentWine.description}</p>
-        <p>{currentWine.price}</p>
+        </div>
+        <h3>{currentWine.price}</h3>
+        <br/>
+        <p><a href={currentWine.link}>Buy Here</a></p>
+        <br/>
+        <button onClick={pushId}>Add To Favourites</button>
       </div>
     </div>
   )

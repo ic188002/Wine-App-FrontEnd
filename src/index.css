@@ -136,6 +136,7 @@ code {
   font-weight: bold;
 } */
 
+
 /* Aligns detials dive and wine list div side by side */
 .wine-library {
   position: relative;
@@ -171,6 +172,7 @@ code {
   align-items: center;
   overflow-y: scroll;
   margin-bottom: 2em;
+  width: 400px;
 }
 
 /* .wine-details > .section-title{
@@ -246,6 +248,7 @@ input {
 
 .wineImage {
   background-size: contain;
+  max-width: 200px;
 
 }
 
@@ -253,6 +256,7 @@ input {
   display: flex;
   justify-content: center;
   padding: 10px;
+  max-width: 200px;
 }
 
 nav {
@@ -319,16 +323,19 @@ nav {
   align-items: center;
   color: rgb(218, 25, 25);
 }
+/* WINE DETAILS */
 
-/* WINES DETAILS PAGE */
-
-.image-detail-inner {
+.wine-detail-inner {
   display: flex;
- 
-}
-.image-details {
-  background-size: cover;
+  flex-direction: column;
+  align-items: center;
 }
 .wine-title-detail {
-
+  text-decoration: underline;
+}
+.image-details {
+  padding: 30px;
+}
+.description-wine {
+  padding: 50px;
 }

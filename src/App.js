@@ -114,7 +114,7 @@ const wineCategories = wineData.wines
     axios.get(`favouritewine/index/?id=${user}`)
     .then(response => {
       // console.log('clicked')
-        console.log(response.data.user.favouritewine);
+        // console.log(response.data.user.favouritewine);
         // this is equivalent to this.setState in class components.
         // Setting the state will rerender the whole component again.
         setWineNights(response.data.user.favouritewine)
