@@ -175,9 +175,8 @@ const addNewWineNight = (wineNight) => {
                 {user ? "Welcome " + user.user.name : null}&nbsp;
 
                 <Link to='/' style={{ color: 'black'}}>Home</Link>&nbsp;
-                <Link to='/logout' onClick={onLogoutHandler}>Logout</Link>&nbsp;
-                <Link to= '/createfavouritewinelist' style={{ color: 'black'}}>Create a Wine List</Link>
                 <Link to='/logout' onClick={onLogoutHandler} style={{ color: 'black'}}>Logout</Link>&nbsp;
+                <Link to= '/createfavouritewinelist' style={{ color: 'black'}}>Create a Wine List</Link>
                 <Link to='/favouritewinelist' style={{ color: 'black'}}>Favourite Wine List</Link>&nbsp;
 
 
