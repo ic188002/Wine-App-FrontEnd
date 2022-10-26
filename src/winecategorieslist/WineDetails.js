@@ -1,12 +1,17 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
 
 export default function WineDetails(props) {
+
+
+
 
   let currentWine = props.currentWine
   let details;
@@ -22,7 +27,6 @@ export default function WineDetails(props) {
     const wineId = currentWine.id
     console.log(wineId)
   }
-
 
 
 
@@ -56,10 +60,20 @@ export default function WineDetails(props) {
           >
             <Button variant="secondary">Buy Here</Button>
           </OverlayTrigger>
-     
-        <br /><br />
-        <button onClick={pushId}>Add To Favourites</button>
-      </div>
+
+
+          <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+            <Dropdown.Item href=""></Dropdown.Item>
+            
+          </DropdownButton>
+
+          <br /><br />
+          <button onClick={pushId}>Add To Favourites</button>
+        </div>
+    
+   
+
+   
       </div>
 
 

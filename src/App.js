@@ -226,7 +226,7 @@ export default function App() {
               {/* we pass the load wine function through tthe wineIndex page as a prop as well as the wine selected from the data from wineClassfication.js */}
               <Route path="/" element={<WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories} />}></Route>
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
-              <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
+              <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineNights={wineNights} wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
               <Route path='/favouritewinelist' element={isAuth ? <FavouriteList loadWineNight={loadWineNight} wineNights={wineNights} user={user.user.id} ></FavouriteList> : <Signin login={loginHandler} />}></Route>
               <Route path='/createfavouritewinelist' element={isAuth ? <FavouritesCreateForm user={user.user.id} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> : <Signin login={loginHandler} />}></Route>
               <Route path='/profile' element={<Profile ></Profile>}> </Route>
