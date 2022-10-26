@@ -28,7 +28,9 @@ export default function WineDetails(props) {
     console.log(wineId)
   }
 
-
+  const addToFavourites = props.wineNights.map((wineNight, index) =>( 
+     <Dropdown.Item>{wineNight.name}</Dropdown.Item>
+  ))
 
   if (currentWine) {
     details =
@@ -41,9 +43,7 @@ export default function WineDetails(props) {
             <p className='description-wine'>{currentWine.description}</p>
           </div>
           <h3>{currentWine.price}</h3>
-          <br />
-
-          <br />
+          <br/><br/>
 
           <OverlayTrigger
             trigger="click"
@@ -62,9 +62,9 @@ export default function WineDetails(props) {
           </OverlayTrigger>
 
 
+          
           <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-            <Dropdown.Item href=""></Dropdown.Item>
-            
+          {addToFavourites}
           </DropdownButton>
 
           <br /><br />
