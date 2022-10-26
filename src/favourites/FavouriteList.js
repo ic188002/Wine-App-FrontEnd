@@ -25,18 +25,15 @@ const editView = (id) => {
     })
   }
   
-  const editFavourites = (favouriteWine) => {
-    axios.put("favouritewine/update", favouriteWine, {headers: {
+  const editFavourites = (list) => {
+    axios.put("favouritewine/update", list, {headers: {
       "Authorization": "Bearer " + localStorage.getItem("token")
   } })
     .then(response => {
-      console.log("Wine Night updated succesffully app.js 160")
-
+    console.log("Wine Night updated succesffully app.js 160")
     props.loadWineNight(props.user)
     setIsEdit(false)
 
-      console.log(response);
-      props.loadWineNight();
     })
     .catch(error => {
       console.log("error Editing Wine nights in App.js 169")
@@ -46,7 +43,7 @@ const editView = (id) => {
    
 const allWineList = props.wineNights.map((list, index) => (
     <div key={index}>
-        <FavouriteListRow {...list} editView={editView} > </FavouriteListRow>
+        <FavouriteListRow {...list} loadWineNight={props.loadWineNight} editView={editView} > </FavouriteListRow>
     </div>
 ))
 
@@ -66,8 +63,7 @@ const allWineList = props.wineNights.map((list, index) => (
         <hr/>
       {allWineList}
         <hr></hr>
-        
-        <FavouritesEditForm currentFavouriteWine_id={currentFavouriteWine._Id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} />
+        {(isEdit) ? <FavouritesEditForm currentFavouriteWine_id={currentFavouriteWine._Id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} /> : null }
     </div>
   )
 }
