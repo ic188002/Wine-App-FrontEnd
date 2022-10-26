@@ -19,20 +19,14 @@ else if (props.type === 'white' || 'champ'){
     className = "Box1"
 } 
  else {
-  
+
 }
 
-
   return (
-    
     // data we are displaying in each card 
    <div onClick={props.loadWineIndex} className={className}>
     <img className='Bottle' src={image} alt = "" />
     <h2 className='info'>{props.name} Wines</h2>
-    </div>
-
-    
+    </div>    
   )
   }
-  
-

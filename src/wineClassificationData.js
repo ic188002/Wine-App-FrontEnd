@@ -34,7 +34,7 @@ const wineData = {
     {
         name: "Rose",
         type: "rose",
-        url: 'rose'
+        url: 'rose_wine'
     },
 
     {
