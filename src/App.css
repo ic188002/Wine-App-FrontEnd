@@ -46,3 +46,7 @@
   position:absolute;
   display: flex;
 }
+
+#editform {
+  position: absolute;
+}
