@@ -13,14 +13,16 @@ import FavouritesCreateForm from './favourites/FavouritesCreateForm'
 import FavouriteList from './favourites/FavouriteList'
 import Profile from './user/Profile'
 
-
-
+//////////////////////////////////////////////////////////////////
+import redWineData from  './redWineClassificationData'
 
 
 //ROUTING
 
 
 export default function App() {
+//////////////////////////////////////////////////////////////////
+const redWinecaregories = redWineData.wines
 
 const wineCategories = wineData.wines
 
@@ -114,30 +116,31 @@ const wineCategories = wineData.wines
   }
 
 
-
   useEffect(() => {
     loadWineNight()
 
   }, [])
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
   // This function load the winelist when a wine on the index is clicked 
-  // const loadRedWineIndex = (category) => {
-  //   // it take the  winedata object as a parameter 
-  //   //  it passes the Url through the API to generate get the list of wines 
-  //   axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=6&apiKey=7a64dea7d5bb41f38bb3b24933947711`)
+  const loadRedWineIndex = (category) => {
+    // it take the  winedata object as a parameter 
+    //  it passes the Url through the API to generate get the list of wines 
+    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=6&apiKey=7a64dea7d5bb41f38bb3b24933947711`)
 
-  //     .then(response => {
-  //       // console.log(response.data)
-  //       // we fetch the data from the API i save it in a variable call winelist 
-  //       setWineList(response.data.recommendedWines)
-  //       // we fetch the data from our classfication data and save it in a variable called wineCategory
-  //       setWineCategory(category)
-  //     })
-  //     .catch(error => {
-  //       console.log('Error Retreving Wines ')
-  //       console.log(error)
-  //     })
-  // }
+      .then(response => {
+        // console.log(response.data)
+        // we fetch the data from the API i save it in a variable call winelist 
+        setWineList(response.data.recommendedWines)
+        // we fetch the data from our classfication data and save it in a variable called wineCategory
+        setRedWineCategory(category)
+      })
+      .catch(error => {
+        console.log('Error Retreving Wines ')
+        console.log(error)
+      })
+  }
 
 
 
