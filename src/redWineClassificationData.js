@@ -14,8 +14,6 @@ const redWineData = {
         url: "cabernet_sauvignon"
     },
 
-
-
     {
         name: "Malbec",
         type: "red",
@@ -28,23 +26,16 @@ const redWineData = {
         type: "red",
         url:"port"
     },
-
-
-
     {
         name: "Rioja",
         type: "red",
         url: "rioja"
     },
-
-
-
     {
         name: "Shiraz",
         type: "red",
         url: "shiraz"
     },
-
     {   
         name: "Moscato",
         type: "red",
