@@ -4,7 +4,7 @@ import React from 'react'
 export default function WineCard(props) {
    const image = `/images/${props.type}.png`
     let className;
-    console.log(className);
+
 
 // if else statement to assign classname subject to the type of wine for styling purposes 
 if(props.type === 'red'){

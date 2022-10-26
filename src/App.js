@@ -39,16 +39,18 @@ const wineCategories = wineData.wines
     let token = localStorage.getItem("token")
     if (token != null) {
       let user = jwt_decode(token);
+      
       if (user) {
         setIsAuth(true)
         setUser(user);
+        loadWineNight(user.user.id)
       }
       else if (!user) {
         localStorage.removeItem("token");
         setIsAuth(false)
       }
-    }
-
+    } 
+  
   }, [])
 
     const registerHandler = (user) => {
@@ -93,7 +95,7 @@ const wineCategories = wineData.wines
   const loadWineIndex = (category) => {
 // it take the  winedata object as a parameter 
 //  it passes the Url through the API to generate get the list of wines 
-    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=6&apiKey=cf8ded1fa117496c820dea2d4b16fbdf`) 
+    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=6&apiKey=5efa5fcad11940bd9a063a743119d8ee`) 
   
     .then(response => {
         // console.log(response.data)
@@ -109,16 +111,13 @@ const wineCategories = wineData.wines
   
   }
 
-  useEffect(() => {
-    loadWineNight()
-  }, [])
-
   const loadWineNight = (user) => {
     // Axios Code will go here
     // console.log(user) 120 _id changed to id
     axios.get(`favouritewine/index/?_id=${user}`)
     .then(response => {
       // console.log('clicked')
+      console.log(response.data)
         // console.log(response.data.user.favouritewine);
         // this is equivalent to this.setState in class components.
         // Setting the state will rerender the whole component again.
@@ -161,7 +160,7 @@ const addNewWineNight = (wineNight) => {
 
 
 
-
+  console.log("app.js")
 
 
   return (
@@ -209,7 +208,8 @@ const addNewWineNight = (wineNight) => {
               <Route path="/" element={<WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories}/>}></Route>
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
               <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
-              <Route path='/favouritewinelist' element={isAuth ? <FavouriteList loadWineNight={loadWineNight} wineNights={wineNights} onClick={loadWineNight(user.user.id)} user={user.user.id} ></FavouriteList> : <Signin login={loginHandler} />}></Route>
+              <Route path='/favouritewinelist' element={isAuth ? <FavouriteList loadWineNight={loadWineNight} wineNights={wineNights} user={user.user.id}></FavouriteList> 
+              : <Signin login={loginHandler} />}></Route>
               <Route path = '/createfavouritewinelist' element={isAuth ? <FavouritesCreateForm user={user.user.id} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> : <Signin login={loginHandler} />}></Route>
               <Route path='/profile' element={<Profile></Profile>}> </Route>
             </Routes>

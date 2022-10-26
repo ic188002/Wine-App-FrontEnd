@@ -10,17 +10,12 @@ export default function FavouriteList(props) {
 
     const [isEdit, setIsEdit] = useState(false);
     const [currentFavouriteWine, setCurrentFavouriteWine] = useState({});
-  // const { wineId } = useParams()
-
-useEffect(() => {
 
 
-    
-    }, [])    
 
-
-const editView = (id) => {
-    axios.get(`favouritewine/edit?_id=${id}`)
+const editView = (_id) => {
+  console.log(_id)
+    axios.get(`favouritewine/edit?_id=${_id}`)
     .then(response => {
       console.log(response.data.favouriteWine)
       // let favouriteWine = response.data.favouriteWine
@@ -30,14 +25,14 @@ const editView = (id) => {
     })
   }
   
-  const editFavourites = (favouriteWine) => {
-    axios.put("favouritewine/update", favouriteWine, {headers: {
+  const editFavourites = (list) => {
+    axios.put("favouritewine/update", list, {headers: {
       "Authorization": "Bearer " + localStorage.getItem("token")
   } })
     .then(response => {
       console.log("Wine Night updated succesffully app.js 160")
+    props.loadWineNight()
       console.log(response);
-      props.loadWineNight();
     })
     .catch(error => {
       console.log("error Editing Wine nights in App.js 169")
@@ -45,10 +40,12 @@ const editView = (id) => {
     })
   }
 
+  console.log(currentFavouriteWine)
+
    
 const allWineList = props.wineNights.map((list, index) => (
     <div key={index}>
-        <FavouriteListRow {...list} editView={editView} > </FavouriteListRow>
+        <FavouriteListRow  loadWineNight={props.loadWineNight} {...list} editView={editView} > </FavouriteListRow>
     </div>
 ))
 
@@ -58,7 +55,9 @@ const allWineList = props.wineNights.map((list, index) => (
                 <h1>Favourite Wine List</h1>
       {allWineList}
         <hr></hr>
-        <FavouritesEditForm currentFavouriteWine_id={currentFavouriteWine._Id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} />
+        {(isEdit) ?
+        <FavouritesEditForm  currentFavouriteWine_id={currentFavouriteWine.id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} /> : null }
     </div>
   )
-}
+
+  }
