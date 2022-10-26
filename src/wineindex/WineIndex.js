@@ -17,35 +17,28 @@ export default function WineIndex(props) {
 
 
 
-  // // looped over each object in the wine data array to create the winecards for the index page 
+
 
    const wineIndex = props.wineCategories.map((category, index) => (
   // the winecard.js stores the information we want to display for each card 
   <Link  key={index} to={`/${category.url}`} style={{textDecoration: "none"}}> <WineCard loadWineIndex={() => props.loadWineIndex(category)} key={index} {...category}></WineCard></Link>
-        
     ))
-  
-    
-    // console.log(props.wineList)
-
 
   return (
     <div>
-
-
       <div className='filter'>
         <div className='title'>
           <h1>Wine Categories</h1>
         </div>
         <div className='filterby'>
           <h2>Filter By.</h2>
-          <img className='redBottle' src='images/redbottle.png' height='100px' alt=""/>
+          <Link to='/redwineindex' style={{ color: 'black' }}> <img className='redBottle' src='images/redbottle.png' height='100px' alt=""/></Link>
           <img className='whiteBottle' src='images/whitebottle.png' height='100px' alt="" />
         </div>
       </div>
       <hr/>
       <div className='Grid'>
-
+    
         {wineIndex}
       </div>
       <div>

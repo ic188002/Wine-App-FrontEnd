@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import FavouriteListRow from './FavouriteListRow'
 import FavouritesEditForm from './FavouritesEditForm'
 
-
 export default function FavouriteList(props) {
 
     const [isEdit, setIsEdit] = useState(false);
@@ -16,6 +15,8 @@ export default function FavouriteList(props) {
 const editView = (_id) => {
   console.log(_id)
     axios.get(`favouritewine/edit?_id=${_id}`)
+
+
     .then(response => {
       console.log(response.data.favouriteWine)
       // let favouriteWine = response.data.favouriteWine
@@ -40,7 +41,9 @@ const editView = (_id) => {
     })
   }
 
+
   console.log(currentFavouriteWine)
+
 
    
 const allWineList = props.wineNights.map((list, index) => (
@@ -51,12 +54,24 @@ const allWineList = props.wineNights.map((list, index) => (
 
   return (
     <div>
-       
-                <h1>Favourite Wine List</h1>
+       <div className='filter'>
+        <div className='title'>
+          <h1>Favourite Wine List</h1>
+        </div>
+        </div>
+        <hr/>
+        <div >
+            <h5 className='fav-wine-list-info'>
+                 Create A favourite wine list For any event, whether A wedding, dinner party or just a collection of you're favourites!
+            </h5>
+        </div>
+        <hr/>
       {allWineList}
         <hr></hr>
+
         {(isEdit) ?
         <FavouritesEditForm  currentFavouriteWine_id={currentFavouriteWine.id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} /> : null }
+
     </div>
   )
 

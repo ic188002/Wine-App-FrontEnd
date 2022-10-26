@@ -1,32 +1,37 @@
 import React from 'react'
 
 
-export default function WineCard(props) {
+export default function RedWineCard(props) {
    const image = `/images/${props.type}.png`
     let className;
 
-
+  
 // if else statement to assign classname subject to the type of wine for styling purposes 
 if(props.type === 'red'){
     className = "Box"
 } 
 
 else if (props.type ==='rose'){
-    className = "Box3"
+    className = "Box"
 }
 
 else if (props.type === 'white' || 'champ'){
-    className = "Box1"
+    className = "Box"
 } 
  else {
 
 }
 
+
   return (
     // data we are displaying in each card 
-   <div onClick={props.loadWineIndex} className={className}>
+
+   <div onClick={props.loadRedWineIndex} className={className}>
     <img className='Bottle' src={image} alt = "" />
-    <h2 className='info'>{props.name} Wines</h2>
-    </div>    
+    <h2 className='info'>{props.name} </h2>
+    </div> 
   )
   }
+
+     
+  
