@@ -138,6 +138,7 @@ const addNewWineNight = (wineNight) => {
 )
     .then(response => {
        console.log('favouritewine added successfully)')
+       loadWineNight(user.user.id)
     })
     .catch(error => {
         console.log(error)
@@ -205,7 +206,7 @@ const addNewWineNight = (wineNight) => {
               <Route path="/signup" element={<Signup register={registerHandler} />}></Route>
               <Route path="/signin" element={isAuth ? <WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories}/> : <Signin login={loginHandler}/>}></Route>
               {/* we pass the load wine function through tthe wineIndex page as a prop as well as the wine selected from the data from wineClassfication.js */}
-              <Route path="/" element={<WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories}/>}></Route>
+              <Route path="/" element={<WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories} wineNights={wineNights}/>}></Route>
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
               <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
               <Route path='/favouritewinelist' element={isAuth ? <FavouriteList loadWineNight={loadWineNight} wineNights={wineNights} user={user.user.id}></FavouriteList> 

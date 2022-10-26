@@ -31,7 +31,8 @@ const editView = (_id) => {
   } })
     .then(response => {
       console.log("Wine Night updated succesffully app.js 160")
-    props.loadWineNight()
+    props.loadWineNight(props.user)
+    setIsEdit(false)
       console.log(response);
     })
     .catch(error => {
