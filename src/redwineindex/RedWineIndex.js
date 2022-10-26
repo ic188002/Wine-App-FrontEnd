@@ -1,8 +1,9 @@
 
 import React from 'react'
 import RedWineCard from './RedWineCard'
-import { Link } from "react-router-dom"
+import { Link, renderMatches } from "react-router-dom"
 import wineData from '../wineClassificationData'
+
 
 // import wineData from  './wineClassificationData'
 
@@ -13,23 +14,24 @@ export default function RedWineIndex(props) {
   // console.log(wineCategoryName)
 
 
-  const filteredWines = wineData.wines.map((wineData) => wineData.type)
-  console.log(filteredWines)
 
-
-
+// const filteredRedWines = () => {
+//   if (wineData.type === "red" ) {
+//     wineData.wines.map(wineData)
+//   }
+//   else {
+// }
 
   // looped over each object in the wine data array to create the RedWineCards for the index page 
 
-  const RedWineIndex = props.wineCategories.map((category, index) => (
-    // the RedWineCard.js stores the information we want to display for each card 
-    <Link key={index} to={`/${category.url}`} style={{ textDecoration: "none" }}> <RedWineCard loadRedWineIndex={() => props.loadRedWineIndex(category)} key={index} {...category}></RedWineCard></Link>
-  ))
+   const RedWineIndex = props.wineCategories.map((category, index) => (
+  // the RedWineCard.js stores the information we want to display for each card 
+  <Link  key={index} to={`/${category.url}`} style={{textDecoration: "none"}}> <RedWineCard loadRedWineIndex={() => props.loadRedWineIndex(category)} key={index} {...category}></RedWineCard></Link>
+    ))
 
 
   return (
     <div>
-     
       <div className='filter'>
         <div className='title'>
           <h1>Red Wine Categories</h1>
@@ -42,10 +44,12 @@ export default function RedWineIndex(props) {
       </div>
       <hr/>
       <div className='Grid'>
+   
+        {RedWineIndex}
       </div>
       <div>
+        {/* <WineList wineList={wineList}  wineCategoryName={wineCategoryName}></WineList>  */}
       </div>
-  
     </div>
 
   )
