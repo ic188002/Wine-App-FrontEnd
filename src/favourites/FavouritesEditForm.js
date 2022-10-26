@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 export default function FavouritesEditForm(props) {
     const [newFavourites, setNewFavourites] = useState(props.favouriteWine)
-    // console.log(props.favouriteWine)
+    console.log(newFavourites)
 
     const handleChange = (e) => {
         const attributeToChange = e.target.name
@@ -48,9 +48,9 @@ export default function FavouritesEditForm(props) {
                     </select>
                 </div>
 
-                {/* <div>
+                /<div>
                     <input name='user' type='hidden' value={`${props.user}`}></input>
-                </div> */}
+                </div> 
                 <br/>
                 <div>
                     <input type="submit" value="Add Wine Night"></input>

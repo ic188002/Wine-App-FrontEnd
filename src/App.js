@@ -41,16 +41,18 @@ export default function App() {
     let token = localStorage.getItem("token")
     if (token != null) {
       let user = jwt_decode(token);
+      
       if (user) {
         setIsAuth(true)
         setUser(user);
+        loadWineNight(user.user.id)
       }
       else if (!user) {
         localStorage.removeItem("token");
         setIsAuth(false)
       }
-    }
-
+    } 
+  
   }, [])
 
   const registerHandler = (user) => {
@@ -93,11 +95,13 @@ export default function App() {
 
   // This function load the winelist when a wine on the index is clicked 
   const loadWineIndex = (category) => {
-    // it take the  winedata object as a parameter 
-    //  it passes the Url through the API to generate get the list of wines 
-    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=6&apiKey=7a64dea7d5bb41f38bb3b24933947711`)
 
-      .then(response => {
+// it take the  winedata object as a parameter 
+//  it passes the Url through the API to generate get the list of wines 
+    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=6&apiKey=5efa5fcad11940bd9a063a743119d8ee`) 
+  
+    .then(response => {
+
         // console.log(response.data)
         // we fetch the data from the API i save it in a variable call winelist 
         setWineList(response.data.recommendedWines)
@@ -110,11 +114,7 @@ export default function App() {
       })
   }
 
-  useEffect(() => {
-    loadWineNight()
 
-  }, [])
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
   // This function load the winelist when a wine on the index is clicked 
   const loadRedWineIndex = (category) => {
     // it take the  winedata object as a parameter 
@@ -136,15 +136,19 @@ export default function App() {
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
   const loadWineNight = (user) => {
     // Axios Code will go here
     // console.log(user) 120 _id changed to id
     axios.get(`favouritewine/index/?_id=${user}`)
-      .then(response => {
-        // console.log('clicked')
+
+    .then(response => {
+      // console.log('clicked')
+      console.log(response.data)
+
         // console.log(response.data.user.favouritewine);
         // this is equivalent to this.setState in class components.
         // Setting the state will rerender the whole component again.
@@ -182,6 +186,8 @@ export default function App() {
 
     <Alert variant='success' onClose={() => setMessage(null)} dismissible >{message}</Alert>
   ) : null
+
+
 
 
 
@@ -235,11 +241,15 @@ export default function App() {
               <Route path="/" element={<WineIndex loadWineIndex={loadWineIndex} wineCategories={wineCategories} />}></Route>
               {/* we pass the winelist data  fetched from the api through to our wineCategoriesList component along with the category */}
               <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
-              <Route path='/favouritewinelist' element={isAuth ? <FavouriteList loadWineNight={loadWineNight} wineNights={wineNights} onClick={loadWineNight(user.user.id)} user={user.user.id} ></FavouriteList> : <Signin login={loginHandler} />}></Route>
-              <Route path='/createfavouritewinelist' element={isAuth ? <FavouritesCreateForm user={user.user.id} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> : <Signin login={loginHandler} />}></Route>
-              <Route path='/profile' element={<Profile ></Profile>}> </Route>
+
+              <Route path='/favouritewinelist' element={isAuth ? <FavouriteList loadWineNight={loadWineNight} wineNights={wineNights} user={user.user.id}></FavouriteList> 
+              : <Signin login={loginHandler} />}></Route>
+              <Route path = '/createfavouritewinelist' element={isAuth ? <FavouritesCreateForm user={user.user.id} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> : <Signin login={loginHandler} />}></Route>
+              <Route path='/profile' element={<Profile></Profile>}> </Route>
+
 
               <Route path="/RedWineIndex" element={<RedWineIndex RedloadWineIndex={loadRedWineIndex} wineCategories={wineCategories} />}></Route>
+
             </Routes>
           </div>
           <div>
