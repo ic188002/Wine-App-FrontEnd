@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import FavouriteListRow from './FavouriteListRow'
 import FavouritesEditForm from './FavouritesEditForm'
 
-
 export default function FavouriteList(props) {
 
     const [isEdit, setIsEdit] = useState(false);
@@ -14,7 +13,6 @@ export default function FavouriteList(props) {
 
 useEffect(() => {    
     }, [])    
-
 
 const editView = (id) => {
     axios.get(`favouritewine/edit?_id=${id}`)
@@ -41,7 +39,6 @@ const editView = (id) => {
       console.log(error)
     })
   }
-
    
 const allWineList = props.wineNights.map((list, index) => (
     <div key={index}>
@@ -51,7 +48,6 @@ const allWineList = props.wineNights.map((list, index) => (
 
   return (
     <div>
-       
        <div className='filter'>
         <div className='title'>
           <h1>Favourite Wine List</h1>

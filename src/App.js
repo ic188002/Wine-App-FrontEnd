@@ -150,18 +150,14 @@ export default function App() {
 
 
 
+  
 
-
-  // console.log(wineList)
-  // console.log(wineCategory)
 
 
   const errMessage = message ? (
 
     <Alert variant='success' onClose={() => setMessage(null)} dismissible >{message}</Alert>
   ) : null
-
-
 
 
 
@@ -217,7 +213,7 @@ export default function App() {
               <Route path={`/${wineCategory.url}`} element={<WineCategoriesList wineList={wineList} wineCategory={wineCategory}></WineCategoriesList>} ></Route>
               <Route path='/favouritewinelist' element={isAuth ? <FavouriteList loadWineNight={loadWineNight} wineNights={wineNights} onClick={loadWineNight(user.user.id)} user={user.user.id} ></FavouriteList> : <Signin login={loginHandler} />}></Route>
               <Route path='/createfavouritewinelist' element={isAuth ? <FavouritesCreateForm user={user.user.id} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> : <Signin login={loginHandler} />}></Route>
-              <Route path='/profile' element={<Profile></Profile>}> </Route>
+              <Route path='/profile' element={<Profile ></Profile>}> </Route>
             </Routes>
           </div>
           <div>
