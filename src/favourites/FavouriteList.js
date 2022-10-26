@@ -40,10 +40,29 @@ const editView = (id) => {
       console.log(error)
     })
   }
-   
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+  const deleteFavourites = (id) => {
+    axios.delete(`favouritewine/delete?_id=${id}`, {
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        }
+    })
+    .then(response => {
+        console.log("record delete!")
+        props.loadWineNight(props.user)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 const allWineList = props.wineNights.map((list, index) => (
     <div key={index}>
-        <FavouriteListRow {...list} loadWineNight={props.loadWineNight} editView={editView} > </FavouriteListRow>
+        <FavouriteListRow {...list} loadWineNight={props.loadWineNight} editView={editView} deleteFavourites={deleteFavourites} > </FavouriteListRow>
     </div>
 ))
 

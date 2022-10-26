@@ -17,8 +17,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import RedWineIndex from './redwineindex/RedWineIndex';
-import redWineData from './redWineClassificationData'
 
 //ROUTING
 
@@ -26,8 +24,7 @@ import redWineData from './redWineClassificationData'
 export default function App() {
   const wineCategories = wineData.wines
 
-/////////////////////////////////////////////////////////////////////
-const redWineCategories = redWineData.wines
+
 
   const [isAuth, setIsAuth] = useState(false);
   const [user, setUser] = useState({});
@@ -132,11 +129,6 @@ const redWineCategories = redWineData.wines
         console.log(error)
       })
   }
-////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 
 
   const loadWineNight = (user) => {
@@ -175,7 +167,6 @@ const redWineCategories = redWineData.wines
 
 
 
-  
 
 
 
@@ -240,8 +231,7 @@ const redWineCategories = redWineData.wines
               <Route path='/createfavouritewinelist' element={isAuth ? <FavouritesCreateForm user={user.user.id} addNewWineNight={addNewWineNight} ></FavouritesCreateForm> : <Signin login={loginHandler} />}></Route>
               <Route path='/profile' element={<Profile ></Profile>}> </Route>
 
-
-              <Route path="/RedWineIndex" element={<RedWineIndex loadWineIndex={loadWineIndex} redWineCategories={redWineCategories} />}></Route>
+        
             </Routes>
           </div>
           <div>

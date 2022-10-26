@@ -35,6 +35,7 @@ export default function WineIndex(props) {
           <h2>Filter By.</h2>
           <Link to='/redwineindex' style={{ color: 'black' }}> <img className='redBottle' src='images/redbottle.png' height='100px' alt=""/></Link>
           <img className='whiteBottle' src='images/whitebottle.png' height='100px' alt="" />
+          <Link to='/' style={{ color: 'black' }}> <img className='redBottle' src='images/all.png' height='100px' alt=""/></Link>
         </div>
       </div>
       <hr/>

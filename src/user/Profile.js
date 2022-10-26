@@ -1,9 +1,7 @@
 import React from 'react'
 
 
-export default function Profile(props) {
-
-
+export default function Profile() {
 
 
 
