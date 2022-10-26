@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function FavouriteListRow(props) {
 
-  console.log(props._id)
+
 
 
   return (
@@ -23,4 +23,3 @@ export default function FavouriteListRow(props) {
     </div>
   )
 }
-
