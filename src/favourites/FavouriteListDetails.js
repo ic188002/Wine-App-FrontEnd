@@ -14,6 +14,8 @@ const showDetials = wines.map((wine, index) => (
         <p>{wine.price}</p>
         <p>{wine.link}</p>
         <hr></hr>
+        <button className="button-delete-wine" onClick={() => {props.deleteWines(wine._id) }}>Remove</button>
+
     </div>
        ))
     
