@@ -66,7 +66,7 @@ export default function WineDetails(props) {
       <div className='full-nothing-selected'>
         <div className='fullish-nothing-selected'>
           <h4 className="no-wine-selected">
-            <span>No Wine Selected</span>
+            <span>Select A wine for further details</span>
           </h4>
           <div className='standin-image-detail'>
             <img className="standin-image" src='/images/winedeats.png' alt='' />
