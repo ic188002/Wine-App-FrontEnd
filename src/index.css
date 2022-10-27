@@ -476,7 +476,7 @@ nav {
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  color: rgb(80, 80, 80);
+  color: rgb(60, 60, 60);
   
 }
 .details-Fav-Items-title {
@@ -509,4 +509,7 @@ nav {
 
   margin-left: 8vw;
   color: rgb(93, 93, 93);
+}
+.button-delete-wine {
+  border-radius: 5px;
 }
