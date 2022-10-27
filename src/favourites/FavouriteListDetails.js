@@ -6,6 +6,7 @@ export default function FavouriteListDetails(props) {
        console.log(wines)
 
 if(favouritelistId ){
+<div></div>
 const showDetials = wines.map((wine, index) => (
       <div key={index}>
         <h5>{wine.title}</h5>
@@ -17,13 +18,16 @@ const showDetials = wines.map((wine, index) => (
         <button className="button-delete-wine" onClick={() => {props.deleteWines(wine._id) }}>Remove</button>
 
     </div>
+    
        ))
     
   return (
     <div>
         
       <h1>{props.listDetails.name}</h1>
+      <button onClick={props.closelist}>Close Wine List</button>
       {showDetials}
+      
     </div>
   )
 

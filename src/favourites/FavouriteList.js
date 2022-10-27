@@ -110,11 +110,24 @@ console.log(list)
         })
     }
 
-   
+   const closelist = (list) =>{
+    console.log(list)
+    axios.get(`favouritewine/details/?id=${list._id}`) 
+       .then(response => {
+       setlistDetails({})
+       })
+        .catch(error =>{
+            console.log('error getting list')
+           console.log(error)
+       })
+   }
 
 const allWineList = props.wineNights.map((list, index) => (
     <div key={index}>
         <FavouriteListRow {...list} loadWineNight={props.loadWineNight} editView={editView} deleteFavourites={deleteFavourites} winelistDetails={() =>handleDetailsClick(list)}> </FavouriteListRow>
+
+        {(list._id === listDetails._id) ?
+            <FavouriteListDetails deleteWines={deleteWines} listDetails={listDetails} closelist={() => closelist(list)}  ></FavouriteListDetails>:  null }
     </div>
 ))
 
@@ -135,8 +148,8 @@ const allWineList = props.wineNights.map((list, index) => (
         <hr/>
 
         {(isEdit) ? <FavouritesEditForm currentFavouriteWine_id={currentFavouriteWine._Id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} /> :  (allWineList)}
-        {(isShowDetials) ?
-        <FavouriteListDetails deleteWines={deleteWines} listDetails={listDetails} ></FavouriteListDetails> : null}
+     
+        
     </div>
   )
 }
