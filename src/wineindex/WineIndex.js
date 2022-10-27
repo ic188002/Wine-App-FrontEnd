@@ -22,7 +22,7 @@ export default function WineIndex(props) {
 
    const wineIndex = wineType.map((category, index) => (
   // the winecard.js stores the information we want to display for each card 
-  <Link  key={index} to={`/${category.url}`} style={{textDecoration: "none"}}> <WineCard loadWineIndex={() => props.loadWineIndex(category)} key={index} {...category}></WineCard></Link>
+ <Link  key={index} to={`/${category.url}`} style={{textDecoration: "none"}}> <WineCard  loadWineIndex={() => props.loadWineIndex(category)} key={index} {...category}></WineCard></Link>
     ))
  
 
@@ -57,8 +57,9 @@ export default function WineIndex(props) {
       </div>
       <hr/>
       <div className='Grid'>
-    
+
         {wineIndex}
+
       </div>
       <div>
         {/* <WineList wineList={wineList}  wineCategoryName={wineCategoryName}></WineList>  */}

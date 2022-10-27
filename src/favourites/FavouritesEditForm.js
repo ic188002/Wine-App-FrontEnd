@@ -28,7 +28,7 @@ export default function FavouritesEditForm(props) {
             <div  id="editform" className='form1'>
            <div className='form'>
             <form onSubmit={handleSubmit} className="form">
-                <h1>Update A Wine Categorie</h1>
+                <h1>Update Your Wine Night</h1>
                 <div>
                     <label>Name:</label>
                     <input name='name' type='text' onChange={handleChange} value={newFavourites.name}></input>
@@ -39,12 +39,14 @@ export default function FavouritesEditForm(props) {
                 </div>
                 <div>
                     <label>Wine Night</label>
-                    <select name="wineNights" id="wineNights" onChange={handleChange} value={newFavourites.description}>
-                        <option value="romanticNight">Romantic Night</option>
-                        <option value="dinnerParty">Dinner Party</option>
-                        <option value="cheapAndCheerful">Cheap And Cheerful</option>
-                        <option value="christmas">Christmas Holiday</option>
-                        <option value="celebrations">Celebrations</option>
+                    <select name="wineNights" id="wineNights" onChange={handleChange} value={newFavourites.wineNights}>
+                        <option value="">Select an Option </option>
+                        <option value="Romantic Night">Romantic Night</option>
+                        <option value="Dinner Party">Dinner Party</option>
+                        <option value="Cheap & Cheerful">Cheap And Cheerful</option>
+                        <option value="Christmas">Christmas Holiday</option>
+                        <option value="Celebrations">Celebrations</option>
+                        <option value="Birthdays">Birthday</option>
                     </select>
                 </div>
 
