@@ -37,7 +37,7 @@ export default function WineCategoriesList(props) {
 
     <div className="wine-library">
       {/* within this we render the display for our WineList component  and winedetails components */}
-      <WineList wineDetails={handleDetailsClick}wineList={props.wineList}  wineCategory={props.wineCategory}></WineList>  
+      <WineList loadWineIndex={props.loadWineIndex}  wineDetails={handleDetailsClick}wineList={props.wineList}  wineCategory={props.wineCategory}></WineList>  
       <WineDetails currentWine={currentWine} wineNights={wineNights} addToWineNight={addToWineNight}></WineDetails>
       </div>
     
