@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom"
 
 
 
@@ -28,10 +29,11 @@ export default function FavouritesCreateForm(props) {
 
     return (
         <div>
+
             <div className='form1'>
            <div className='form'>
             <form onSubmit={handleSubmit} className="form">
-                <h1>Add A Wine Categorie</h1>
+                <h1>Create Wine Night</h1>
                 <div>
                     <label>Name:</label>
                     <input name='name' type='text' onChange={handleChange}></input>
@@ -43,11 +45,13 @@ export default function FavouritesCreateForm(props) {
                 <div>
                     <label>Wine Night</label>
                     <select name="wineNights" id="wineNights" onChange={handleChange}>
-                        <option value="romanticNight">Romantic Night</option>
-                        <option value="dinnerParty">Dinner Party</option>
-                        <option value="cheapAndCheerful">Cheap And Cheerful</option>
-                        <option value="christmas">Christmas Holiday</option>
-                        <option value="celebrations">Celebrations</option>
+                        <option value="">Select an Option </option>
+                        <option value="Romantic Night">Romantic Night</option>
+                        <option value="Dinner Party">Dinner Party</option>
+                        <option value="Cheap & Cheerful">Cheap And Cheerful</option>
+                        <option value="Christmas">Christmas Holiday</option>
+                        <option value="Celebrations">Celebrations</option>
+                        <option value="Birthdays">Birthday</option>
                     </select>
                 </div>
 
@@ -55,8 +59,8 @@ export default function FavouritesCreateForm(props) {
                     <input name='user' type='hidden' value={`${props.user}`}></input>
                 </div>
                 <br/>
-                <div>
-                    <input type="submit" value="Add Wine Night"></input>
+               <div>
+                 <input type="submit" value="Add Wine Night"></input>
                 </div>
 
             </form>

@@ -4,14 +4,22 @@ import FavouritesCreateForm from './FavouritesCreateForm'
 import { useState, useEffect } from 'react'
 import FavouriteListRow from './FavouriteListRow'
 import FavouritesEditForm from './FavouritesEditForm'
+import FavouriteListDetails from './FavouriteListDetails'
+import { Link } from 'react-router-dom'
 
 export default function FavouriteList(props) {
 
     const [isEdit, setIsEdit] = useState(false);
     const [currentFavouriteWine, setCurrentFavouriteWine] = useState({});
+    const [ listDetails , setlistDetails] = useState({})
+    const [isShowDetials, setisShowDetials] = useState(false);
   // const { wineId } = useParams()
 
-useEffect(() => {    
+  
+
+useEffect(() => {  
+ 
+
     }, [])    
 
 const editView = (id) => {
@@ -26,14 +34,16 @@ const editView = (id) => {
   }
   
   const editFavourites = (list) => {
-    axios.put("favouritewine/update", list, {headers: {
-      "Authorization": "Bearer " + localStorage.getItem("token")
-  } })
+    axios.put("favouritewine/update", list, {
+    headers:{
+    "x-auth-token": localStorage.getItem('token')
+      }
+  })
     .then(response => {
     console.log("Wine Night updated succesffully app.js 160")
-    props.loadWineNight(props.user)
     setIsEdit(false)
-
+    props.loadWineNight(props.user)
+  
     })
     .catch(error => {
       console.log("error Editing Wine nights in App.js 169")
@@ -42,11 +52,7 @@ const editView = (id) => {
   }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
   const deleteFavourites = (id) => {
-    axios.delete(`favouritewine/delete?_id=${id}`, {
-        headers: {
-            "Authorization": "Bearer " + localStorage.getItem("token")
-        }
-    })
+    axios.delete(`favouritewine/delete?_id=${id}`)
     .then(response => {
         console.log("record delete!")
         props.loadWineNight(props.user)
@@ -58,13 +64,31 @@ const editView = (id) => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+const handleDetailsClick= (list) => {
+console.log(list)
+   axios.get(`favouritewine/details/?id=${list._id}`) 
+      .then(response => {
+      // console.log(response.data.author) // take a look at what you get back!
+      // console.log(`Fetching details for ${author.name}`);
+      console.log(response.data.favouritewine)
+      setisShowDetials(true)
+      setlistDetails(response.data.favouritewine)
+      
+  
+      })
+       .catch(error =>{
+           console.log('error getting list')
+          console.log(error)
+      })
+      }
 
 
 const allWineList = props.wineNights.map((list, index) => (
     <div key={index}>
-        <FavouriteListRow {...list} loadWineNight={props.loadWineNight} editView={editView} deleteFavourites={deleteFavourites} > </FavouriteListRow>
+        <FavouriteListRow {...list} loadWineNight={props.loadWineNight} editView={editView} deleteFavourites={deleteFavourites} winelistDetails={() =>handleDetailsClick(list)}> </FavouriteListRow>
     </div>
 ))
+
 
   return (
     <div>
@@ -80,9 +104,10 @@ const allWineList = props.wineNights.map((list, index) => (
             </h5>
         </div>
         <hr/>
-      {allWineList}
-        <hr></hr>
-        {(isEdit) ? <FavouritesEditForm currentFavouriteWine_id={currentFavouriteWine._Id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} /> : null }
+
+        {(isEdit) ? <FavouritesEditForm currentFavouriteWine_id={currentFavouriteWine._Id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} /> :  (allWineList)}
+        {(isShowDetials) ?
+        <FavouriteListDetails listDetails={listDetails} ></FavouriteListDetails> : null}
     </div>
   )
 }

@@ -5,36 +5,27 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import AddToFavourite from './AddToFavourite';
 
 
 
 export default function WineDetails(props) {
 
 
-
-
-  let currentWine = props.currentWine
+  let wineNights= props.wineNights
+  
+  const currentWine = props.currentWine
   let details;
-  // this will be an onclick function , so we will need to pass a function through wineRow to grab the data, for now just mapped over
-  // const wineDetails=props.wineList.map((wine, index) =>(
-  //     <div key={index}>
-  //      <h5>{wine.title}</h5>
-  //     <h5>{wine.description}</h5>
-  //     <h5>{wine.price}</h5>
-  //     </div>
-  // ))
-  const pushId = (e, favWine, response) => {
-    const wineId = currentWine.id
-    console.log(wineId)
-  }
 
   const addToFavourites = props.wineNights.map((wineNight, index) =>( 
      <Dropdown.Item>+ {wineNight.name} </Dropdown.Item>
   ))
 
-  if (currentWine) {
+  if (currentWine.id) {
+
     details =
-      <div className="wine-details">
+       <div className="wine-details">
+    
         <div className='wine-detail-inner'>
           <div className='image-details'><img className='image-detail-full' src={currentWine.imageUrl} alt=""></img>
           </div>
@@ -62,24 +53,17 @@ export default function WineDetails(props) {
           </OverlayTrigger>
 
 
-          
-          <DropdownButton id="dropdown-basic-button" title="+ Add To A List">
-          {addToFavourites}
-          </DropdownButton>
+
+          <AddToFavourite wineNights={wineNights} currentWine={currentWine} addToWineNight={props.addToWineNight}></AddToFavourite>
+    
 
           <br /><br />
-          <button onClick={pushId}>Add To Favourites</button>
         </div>
-    
-   
-
-   
       </div>
-
-
-  } else {
+  } 
+  else {
     details =
-      <div className="wine-details">
+     <div>
         <p>
           <span>No Wine Selected</span>
         </p>
@@ -87,7 +71,7 @@ export default function WineDetails(props) {
       </div>
   }
   return (
-    <div className="film-details">
+    <div className="wine-details">
       <h1 className="section-title">DETAILS</h1>
       {details}
 
