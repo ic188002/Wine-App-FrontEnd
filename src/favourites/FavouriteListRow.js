@@ -16,6 +16,7 @@ export default function FavouriteListRow(props) {
         {/* <p>{props._id}</p> */}
         <button className="button-fav-wines-edit"onClick={() => { props.editView(props._id) }}>Edit</button>
         <button className="button-fav-wines-delete"onClick={() => {props.deleteFavourites(props._id)}}>Delete</button>
+        <button className="button-fav-wines-delete"onClick={props.winelistDetails}>View List</button>
         <img className="fav-list-image" src="images/logo1.png" height="70rem" />
 
    
