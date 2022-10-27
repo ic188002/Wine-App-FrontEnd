@@ -52,9 +52,8 @@ export default function WineDetails(props) {
             <Button variant="secondary">Buy Here</Button>
           </OverlayTrigger>
 
-
-
-          <AddToFavourite wineNights={wineNights} currentWine={currentWine} addToWineNight={props.addToWineNight}></AddToFavourite>
+   
+          <AddToFavourite wineNights={wineNights} currentWine={currentWine} addToWineNight={props.addToWineNight}></AddToFavourite> 
 
 
           <br /><br />
