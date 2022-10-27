@@ -113,9 +113,11 @@ code {
   margin-bottom: 0.2rem;
   background-color: white;
 }
+
 .wine-summary:hover {
   background-color: #f6f6f6;
 }
+
 .wine-summary {
   display: flex;
   justify-content: center;
@@ -175,13 +177,13 @@ code {
   width: 400px;
 }
 
-
-/* .wine-details > .section-title{
+/* 
+.wine-details {
   left: 33.333333%;
-  width: 66.666666%;
-}
+  width: 66.666666%; */
 
-.wine-list > .section-title {
+
+/* .wine-list > .section-title {
   width: 33.333333%;
   left: 0;
 } */
@@ -307,23 +309,27 @@ nav {
   padding: 2px;
   text-decoration: underline;
 }
+
 .wine-bottom {
   width: 100%;
   display: flex;
   align-items: flex-end;
 }
+
 .wine-info-row {
-  
+
   text-align: center;
 }
+
 .tick-box {
-  
+
   padding: 30px;
   display: flex;
   color: white;
   align-items: center;
   color: rgb(218, 25, 25);
 }
+
 /* WINE DETAILS */
 
 .wine-detail-inner {
@@ -331,16 +337,20 @@ nav {
   flex-direction: column;
   align-items: center;
 }
+
 .wine-title-detail {
   text-decoration: underline;
 }
+
 .image-details {
   padding: 30px;
 }
+
 .description-wine {
   padding: 50px;
   font-size: 18px;
 }
+
 .overlay {
   text-align: center;
 }
@@ -355,9 +365,10 @@ nav {
   min-width: 40%;
   border-bottom: #777 3px solid;
   border-right: #777 3px solid;
-  color:rgb(53, 53, 53);
+  color: rgb(53, 53, 53);
   transition: 5ms;
 }
+
 .wine-night:hover {
   background-color: rgb(255, 214, 214);
   margin-left: 30%;
@@ -367,6 +378,7 @@ nav {
   border-bottom: #777 4px solid;
   border-right: #777 4px solid;
 }
+
 .wine-night-full-div {
   display: flex;
   justify-items: center;
@@ -374,9 +386,11 @@ nav {
   padding: 45px;
 
 }
+
 .fav-list-image {
   float: right;
 }
+
 .button-fav-wines-edit {
   margin-top: 20px;
   padding: 10px;
@@ -384,29 +398,85 @@ nav {
   border-left: none;
   border-right: rgb(53, 53, 53) 1px solid;
 }
+
 .button-fav-wines-edit:hover {
- background-color: rgb(228, 228, 228);
+  background-color: rgb(228, 228, 228);
 }
+
 .button-fav-wines-delete {
   margin-top: 20px;
   padding: 10px;
   border-top: none;
   border-left: none;
 }
+
 .button-fav-wines-delete:hover {
- background-color: rgb(228, 228, 228);
+  background-color: rgb(228, 228, 228);
 }
+
 .fav-wine-list-info {
   text-align: center;
   font-size: 1.2vw
 }
+
 .fav-list-description {
   font-size: 1.2vw;
 }
+
 .fav-list-event {
   font-size: 1.5vw;
 }
 
 
+.standin-image-detail {
+  width: 66.33vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
 
+.standin-image {
+  width: 50vw;
+}
 
+.full-nothing-selected {
+  display: flex;
+}
+
+.fullish-nothing-selected {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.no-wine-selected {
+  padding: 40px;
+}
+.add-to-list {
+  display: flex;
+  align-items: center ;
+  padding-top: 30px;
+}
+.add-to-list-button-div {
+  padding-left: 20px;
+
+}
+.add-to-list-button {
+  background-color: #777;
+  color: white;
+}
+.add-to-list-button:hover {
+  background-color: rgb(92, 92, 92);
+  color: white;
+}
+.favouriteWines {
+  color:rgb(81, 81, 81);
+}
+
+.index-wine-list-info {
+  text-align: center;
+  
+  font-size: 1.2vw
+}

@@ -56,6 +56,13 @@ export default function WineIndex(props) {
         </div>
       </div>
       <hr/>
+        <div >
+            <h5 className='index-wine-list-info'>
+            "We're an <strong>independent wine merchant</strong>. Trading now for nearly 0.001 years, we pride ourselves on our <strong>customer service</strong> delivered by our passionate and knowledgeable team of <strong>wine experts</strong> and enthusiasts." 
+            </h5>
+        </div>
+        <hr/>
+      
       <div className='Grid'>
 
         {wineIndex}

@@ -12,20 +12,20 @@ import AddToFavourite from './AddToFavourite';
 export default function WineDetails(props) {
 
 
-  let wineNights= props.wineNights
-  
+  let wineNights = props.wineNights
+
   const currentWine = props.currentWine
   let details;
 
-  const addToFavourites = props.wineNights.map((wineNight, index) =>( 
-     <Dropdown.Item>+ {wineNight.name} </Dropdown.Item>
+  const addToFavourites = props.wineNights.map((wineNight, index) => (
+    <Dropdown.Item>+ {wineNight.name} </Dropdown.Item>
   ))
 
   if (currentWine.id) {
 
     details =
-       <div className="wine-details">
-    
+      <div className="wine-details">
+
         <div className='wine-detail-inner'>
           <div className='image-details'><img className='image-detail-full' src={currentWine.imageUrl} alt=""></img>
           </div>
@@ -34,7 +34,7 @@ export default function WineDetails(props) {
             <p className='description-wine'>{currentWine.description}</p>
           </div>
           <h3>{currentWine.price}</h3>
-          <br/><br/>
+          <br /><br />
 
           <OverlayTrigger
             trigger="click"
@@ -55,19 +55,23 @@ export default function WineDetails(props) {
 
 
           <AddToFavourite wineNights={wineNights} currentWine={currentWine} addToWineNight={props.addToWineNight}></AddToFavourite>
-    
+
 
           <br /><br />
         </div>
       </div>
-  } 
+  }
   else {
     details =
-     <div>
-        <p>
-          <span>No Wine Selected</span>
-        </p>
-        <img src='/images/logo.png' alt='' />
+      <div className='full-nothing-selected'>
+        <div className='fullish-nothing-selected'>
+          <h4 className="no-wine-selected">
+            <span>No Wine Selected</span>
+          </h4>
+          <div className='standin-image-detail'>
+            <img className="standin-image" src='/images/winedeats.png' alt='' />
+          </div>
+        </div>
       </div>
   }
   return (
