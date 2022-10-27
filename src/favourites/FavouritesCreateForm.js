@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom"
+import { Link , useNavigate} from "react-router-dom"
 
 
 
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 export default function FavouritesCreateForm(props) {
 
     const [newWineNight, setNewWineNight] = useState({ user: props.user })
-
+    const navigate = useNavigate();
     
 
     const handleChange = (event) => {
@@ -24,6 +24,8 @@ export default function FavouritesCreateForm(props) {
         event.preventDefault();
         props.addNewWineNight(newWineNight);
         event.target.reset();
+        navigate('/favouritewinelist');
+
     }
 
 
