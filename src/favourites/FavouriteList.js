@@ -14,6 +14,7 @@ export default function FavouriteList(props) {
     const [ listDetails , setlistDetails] = useState({})
     const [isShowDetials, setisShowDetials] = useState(false);
   // const { wineId } = useParams()
+  
 
   
 
@@ -73,8 +74,7 @@ console.log(list)
       console.log(response.data.favouritewine)
       setisShowDetials(true)
       setlistDetails(response.data.favouritewine)
-      
-  
+        
       })
        .catch(error =>{
            console.log('error getting list')
@@ -82,6 +82,35 @@ console.log(list)
       })
       }
 
+      const handleDetailsList= (listDetails) => {
+        console.log(listDetails)
+           axios.get(`favouritewine/details/?id=${listDetails._id}`) 
+              .then(response => {
+              // console.log(response.data.author) // take a look at what you get back!
+              // console.log(`Fetching details for ${author.name}`);
+              console.log(response.data.favouritewine)
+              setisShowDetials(true)
+              setlistDetails(response.data.favouritewine)
+                
+              })
+               .catch(error =>{
+                   console.log('error getting list')
+                  console.log(error)
+              })
+              }
+            
+      const deleteWines = (id) => {
+        axios.delete(`wine/delete?_id=${id}`)
+        .then(response => {
+          props.loadWineNight(props.user)
+          handleDetailsList(listDetails)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+   
 
 const allWineList = props.wineNights.map((list, index) => (
     <div key={index}>
@@ -107,7 +136,7 @@ const allWineList = props.wineNights.map((list, index) => (
 
         {(isEdit) ? <FavouritesEditForm currentFavouriteWine_id={currentFavouriteWine._Id} favouriteWine={currentFavouriteWine} editFavourites={editFavourites} /> :  (allWineList)}
         {(isShowDetials) ?
-        <FavouriteListDetails listDetails={listDetails} ></FavouriteListDetails> : null}
+        <FavouriteListDetails deleteWines={deleteWines} listDetails={listDetails} ></FavouriteListDetails> : null}
     </div>
   )
 }
