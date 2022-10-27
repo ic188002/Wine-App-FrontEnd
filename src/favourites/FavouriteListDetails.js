@@ -29,9 +29,11 @@ export default function FavouriteListDetails(props) {
 
     return (
       <div>
+        <div className='title-and-button'>
+        <h1 className='list-title'>Wine List: {props.listDetails.name}</h1>
+        <button className="button-fav-list"onClick={props.closelist}>Close Wine List</button>
+        </div>
         <hr></hr>
-        <h1 className='list-title'>{props.listDetails.name}</h1>
-        <hr/>
         {showDetials}
       </div>
     )

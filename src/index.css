@@ -513,3 +513,13 @@ nav {
 .button-delete-wine {
   border-radius: 5px;
 }
+.title-and-button {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+
+}
+.button-fav-list {
+  margin-left: 50px;
+  border-radius: 20px;
+}

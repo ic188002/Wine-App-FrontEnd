@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import Signup from './user/Signup'
 import Signin from './user/Signin'
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from "react-router-dom"
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Alert } from "react-bootstrap"
@@ -15,7 +15,8 @@ import Profile from './user/Profile'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown'
+
 
 
 //ROUTING
@@ -23,7 +24,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function App() {
   const wineCategories = wineData.wines
-
 
 
   const [isAuth, setIsAuth] = useState(false);
@@ -96,7 +96,7 @@ export default function App() {
   const loadWineIndex = (category) => {
     // it take the  winedata object as a parameter 
     //  it passes the Url through the API to generate get the list of wines 
-    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=25&apiKey=5efa5fcad11940bd9a063a743119d8ee`)
+    axios.get(`https://api.spoonacular.com/food/wine/recommendation?wine=${category.url}&number=6&apiKey=5efa5fcad11940bd9a063a743119d8ee`)
 
       .then(response => {
         // console.log(response.data)
@@ -126,6 +126,7 @@ export default function App() {
         // this is equivalent to this.setState in class components.
         // Setting the state will rerender the whole component again.
         setWineNights(response.data.user.favouritewine)
+    
         
       })
       .catch(error => {
