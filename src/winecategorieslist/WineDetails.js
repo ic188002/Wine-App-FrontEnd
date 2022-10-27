@@ -29,7 +29,7 @@ export default function WineDetails(props) {
   }
 
   const addToFavourites = props.wineNights.map((wineNight, index) =>( 
-     <Dropdown.Item>{wineNight.name}</Dropdown.Item>
+     <Dropdown.Item>+ {wineNight.name} </Dropdown.Item>
   ))
 
   if (currentWine) {
@@ -63,7 +63,7 @@ export default function WineDetails(props) {
 
 
           
-          <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+          <DropdownButton id="dropdown-basic-button" title="+ Add To A List">
           {addToFavourites}
           </DropdownButton>
 
