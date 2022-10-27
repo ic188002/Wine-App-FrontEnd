@@ -506,7 +506,6 @@ nav {
  margin-right: 20px;
 }
 .list-title {
-
   margin-left: 8vw;
   color: rgb(93, 93, 93);
 }
@@ -517,7 +516,6 @@ nav {
   display: flex;
   flex-direction: row;
   margin-top: 40px;
-
 }
 .button-fav-list {
   margin-left: 50px;

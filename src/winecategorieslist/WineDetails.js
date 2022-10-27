@@ -43,7 +43,8 @@ export default function WineDetails(props) {
                 <Popover.Header as="h3">{''}</Popover.Header>
                 <Popover.Body>
                   <div className='overlay'>
-                    <strong>Please Come Back To Us</strong><p><a href={currentWine.link}>Click Here To Buy</a></p>
+                    <strong>Please Come Back To Us</strong><p><a href={currentWine.link}>Click Here To Buy
+                    <br></br>for {currentWine.price}</a></p>
                   </div>
                 </Popover.Body>
               </Popover>

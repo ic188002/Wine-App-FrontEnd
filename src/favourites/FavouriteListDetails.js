@@ -37,7 +37,6 @@ export default function FavouriteListDetails(props) {
         {showDetials}
       </div>
     )
-
   } else {
 
   }
