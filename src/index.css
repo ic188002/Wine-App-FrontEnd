@@ -10,7 +10,6 @@ body {
 * {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-
 }
 
 a {
@@ -28,20 +27,16 @@ code {
   text-align: center;
 }
 
-
 .Grid {
   display: grid;
   grid-template-columns: auto auto auto auto;
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 50px;
-
 }
 
 .Box {
-
   color: rgb(179, 41, 41);
-
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -49,9 +44,7 @@ code {
 }
 
 .Box1 {
-
   color: rgb(90, 175, 103);
-
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -59,9 +52,7 @@ code {
 }
 
 .Box3 {
-
   color: rgb(249, 115, 220);
-
   width: 20rem;
   text-align: center;
   height: 20rem;
@@ -69,7 +60,6 @@ code {
 }
 
 .info {
-
   top: 15rem;
   margin-bottom: 0;
   text-align: center;
@@ -79,14 +69,12 @@ code {
   font-size: 1.5em;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
-
 }
 
 .Bottle {
   position: relative;
   height: 80%;
   transition: transform .4s;
-
 }
 
 .Bottle:hover {
@@ -177,18 +165,6 @@ code {
   width: 400px;
 }
 
-/* 
-.wine-details {
-  left: 33.333333%;
-  width: 66.666666%; */
-
-
-/* .wine-list > .section-title {
-  width: 33.333333%;
-  left: 0;
-} */
-
-
 .filter {
   padding: 20px;
   background-color: rgb(255, 255, 255);
@@ -235,16 +211,12 @@ input {
 .title {
   display: flex;
   align-items: center;
-  color: #777;
+  color: rgb(68, 68, 68);
   text-decoration: underline;
   padding: 30px;
-
-
-
 }
 
 .wineBox {
-
   width: 220px;
   background-size: contain;
 }
@@ -252,7 +224,6 @@ input {
 .wineImage {
   background-size: contain;
   max-width: 200px;
-
 }
 
 .wineBoxCenter {
@@ -270,14 +241,12 @@ nav {
   align-items: center;
   padding: 40px;
   font-size: 17px;
-
 }
 
 #footer {
   display: flex;
   justify-content: space-around;
   font-size: 9px;
-
   bottom: 0;
   width: 100%;
 }
@@ -292,7 +261,6 @@ nav {
   align-items: center;
   text-align: center;
   border-radius: 30px;
-
 }
 
 .form1 {
@@ -317,12 +285,10 @@ nav {
 }
 
 .wine-info-row {
-
   text-align: center;
 }
 
 .tick-box {
-
   padding: 30px;
   display: flex;
   color: white;
@@ -331,7 +297,6 @@ nav {
 }
 
 /* WINE DETAILS */
-
 .wine-detail-inner {
   display: flex;
   flex-direction: column;
@@ -354,8 +319,6 @@ nav {
 .overlay {
   text-align: center;
 }
-
-
 
 .wine-night {
   background-color: rgb(255, 217, 217);
@@ -427,6 +390,9 @@ nav {
   font-size: 1.5vw;
 }
 
+.fav-list-name {
+  font-size: 1.8vw;
+}
 
 .standin-image-detail {
   width: 66.33vw;
@@ -454,29 +420,93 @@ nav {
 .no-wine-selected {
   padding: 40px;
 }
+
 .add-to-list {
   display: flex;
-  align-items: center ;
+  align-items: center;
   padding-top: 30px;
 }
+
 .add-to-list-button-div {
   padding-left: 20px;
-
 }
+
 .add-to-list-button {
   background-color: #777;
   color: white;
 }
+
 .add-to-list-button:hover {
   background-color: rgb(92, 92, 92);
   color: white;
 }
+
 .favouriteWines {
-  color:rgb(81, 81, 81);
+  color: rgb(81, 81, 81);
 }
 
 .index-wine-list-info {
   text-align: center;
-  
   font-size: 1.2vw
+}
+
+.details-Fav-Items {
+  background-color: rgb(255, 255, 255);
+
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  width: 90vw;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+.image-box-detail-fav {
+  
+  
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+.whole {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  color: rgb(80, 80, 80);
+  
+}
+.details-Fav-Items-title {
+  background-color: rgb(255, 223, 223);
+  padding-top: 15px;
+  border: rgb(206, 206, 206) 2px solid;
+  border-radius: 6px;
+ 
+  
+}
+.details-image-fav {
+
+ 
+}
+.flex-title {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px ;
+  padding-left: 20px ;
+}
+.description {
+  width: 60%;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+ margin-right: 20px;
+}
+.list-title {
+
+  margin-left: 8vw;
+  color: rgb(93, 93, 93);
 }

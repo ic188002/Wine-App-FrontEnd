@@ -10,7 +10,7 @@ export default function FavouriteListRow(props) {
 
     <div className='wine-night-full-div'>
       <div className='wine-night'>
-        <h3>{props.name}</h3>
+        <p className='fav-list-name'>{props.name}</p>
         <p className='fav-list-description'>{props.description}</p>
         <p className='fav-list-event'>Event: {props.wineNights}</p>
         {/* <p>{props._id}</p> */}
