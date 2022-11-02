@@ -27,8 +27,9 @@ We Had only 6 days to complete this project working in a team of three. For this
 <h2>Technologies Used</h2>
 
 <h3>Front End</h3>
+
 <ul>
-<li>React<li>
+<li>React</li>
 <li>CSS</li>
 <li>HTML</li>
 <li>JavaScript</li>
