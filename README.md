@@ -126,7 +126,7 @@ Having decided on our idea I created a rough wireframe, this gave me a base to w
 A challenging part of code we had to write was the filter function for the wine categories, even though I look back and can clearly see the path at the time it did stump me as this was the first filter function that I have added to a site. When I first built this functionality into the application it was very undry, as instead of writing a function that targets the className I built two other wineClassificationData.js with red a white wines along with a red and white wineCard.js. 
 
 <img  src="/photos/99.png" width="100%"/><br>
-<img  src="/photos/filterwine.png" width="100%"/>
+<img  src="/photos/filterwine1.png" width="100%"/>
 
 This filter occurs when one of the images above is clicked, then an event is triggered, which sets a variable called “type” And after runs an arrow function to filter the wines that are equal to the chosen type. 
 
