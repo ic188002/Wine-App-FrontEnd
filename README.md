@@ -142,4 +142,16 @@ I believe that there are 3 main wins that I have taken away from this project. F
 <h2>Key Learnings/Takeaways</h2>
 
 
-There are a number of key learnings that I have taken away from this project, this was my first application that worked using a separate front and back end using AJAX. This was also the first time I have implemented JWT authorization and used the React Library to build the site. And while I found aspects of the project challenging, one of the most important takeaways is how to pass down props, how to set states using useEffect for authorization and understanding the basic React processes. 
+There are a number of key learnings that I have taken away from this project, this was my first application that worked using a separate front and back end using AJAX. This was also the first time I have implemented JWT authorization and used the React Library to build the site. And while I found aspects of the project challenging, one of the most important takeaways is how to pass down props, how to set states using useEffect for authorization and understanding the basic React processes.  
+
+<h2>Bugs</h2>
+
+Currently I am unaware of any bugs in this application. 
+<hr>
+<h2>Future Improvements</h2>
+
+A better developed wine type index page would  be one of my first priorities
+An option to filter by price and rating as well, while I managed to get the information back from the API in Postman I couldn't in my code, and ran out of time
+Logged in user page with option to change password and update information
+Make it mobile compatible 
+
